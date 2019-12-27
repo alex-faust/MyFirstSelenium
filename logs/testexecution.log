@@ -1,0 +1,18 @@
+2019-12-26 21:14:55,948, 0(ms), [com.platform.project.commons.WebDriverManager] - Chrome browser detected.
+2019-12-26 21:15:02,811, 6863(ms), [com.platform.project.commons.WebDriverManager] - Driver initialization successful.
+2019-12-26 21:15:02,851, 6903(ms), [com.platform.project.pageObjects.HomePage] - Opening Homepage
+2019-12-26 21:15:02,853, 6905(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forhomePageUrl is http://107.170.213.234/catalog/
+2019-12-26 21:15:04,268, 8320(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file foremailAddress is alexTest1@yahoo.com
+2019-12-26 21:15:04,269, 8321(ms), [com.platform.project.pageObjects.LogInPage] - Creating an account
+2019-12-26 21:15:04,270, 8322(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forfirstname is alexTest1
+2019-12-26 21:15:04,455, 8507(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forlastname is tester
+2019-12-26 21:15:04,589, 8641(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file fordateOfBirth is 01/01/2020
+2019-12-26 21:15:05,143, 9195(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forstreetAddress is 1234 Main st
+2019-12-26 21:15:05,286, 9338(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forpostCode is 94118
+2019-12-26 21:15:05,410, 9462(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forcity is San Francisco
+2019-12-26 21:15:05,580, 9632(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forstate is CA
+2019-12-26 21:15:05,688, 9740(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forphoneNumber is 555-555-1212
+2019-12-26 21:15:05,877, 9929(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file foryourPassword is 1234567890
+2019-12-26 21:15:06,078, 10130(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file foryourPasswordConfirm is 1234567890
+2019-12-26 21:15:06,796, 10848(ms), [com.platform.project.pageObjects.CreateAccountSuccess] - Getting title
+2019-12-26 21:15:06,859, 10911(ms), [com.platform.project.pageObjects.CreateAccountSuccess] - Login page title is: Your Account Has Been Created!

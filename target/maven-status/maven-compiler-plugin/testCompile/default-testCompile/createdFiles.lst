@@ -1,0 +1,6 @@
+com\platform\project\commons\Commons.class
+com\platform\project\commons\WebDriverManager.class
+com\platform\project\test\HomePageTest.class
+com\platform\project\test\LogInPageTest.class
+com\platform\project\test\WelcomePageTest.class
+com\platform\project\test\ForgottenPasswordPageTest.class
