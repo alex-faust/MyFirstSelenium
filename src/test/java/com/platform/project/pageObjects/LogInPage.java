@@ -55,13 +55,12 @@ public class LogInPage
     @FindBy(xpath = "//body//option[224]")
     WebElement country;
     @FindBy(xpath = "//div[2]//table[1]//tbody[1]//tr[1]//td[2]//input[1]")
-    WebElement gender;
+    WebElement genderMale;
     @FindBy(xpath = "//span[contains(text(),'Continue')]")
     WebElement continueButton;
 
     private WebDriver driver;
     private Logger logger = Logger.getLogger(LogInPage.class);
-    Long time;
 
     public LogInPage(WebDriver driver)
     {
@@ -110,8 +109,7 @@ public class LogInPage
 
     public String getErrorMsg()
     {
-        String message = loginError.getText();
-        return message;
+        return loginError.getText();
     }
 
     public void passwordForgotten()
@@ -139,7 +137,7 @@ public class LogInPage
         yourPassword.sendKeys(ReadPropertyFile.getConfigPropertyVal("yourPassword"));
         yourPasswordConfirm.sendKeys(ReadPropertyFile.getConfigPropertyVal("yourPasswordConfirm"));
         country.click();
-        gender.click();
+        genderMale.click();
         continueButton.click();
 
     }

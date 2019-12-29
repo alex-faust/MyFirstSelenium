@@ -6,14 +6,11 @@ import com.platform.project.pageObjects.HomePage;
 import com.platform.project.pageObjects.LogInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-public class HomePageTest
+public class CheckoutPageTest
 {
     WebDriver driver;
     HomePage homePage;
@@ -35,29 +32,11 @@ public class HomePageTest
     }
 
     @Test
-    public void openHomePage()
+    public void buyAProduct()
     {
         homePage.openHomePage();
-        //c.takeSnapShot(driver, "test");
-        c.assertResult(driver, homePage.getPageTitle(), "Welcome to iBusiness");
-
-    }
-
-    @Test
-    public void openHomePage2()
-    {
-        homePage.openHomePage();
-        //Assert.assertEquals(homePage.getPageTitle(), "Welcome to iBusiness2");
-        //c.takeSnapShot(driver, "test");
-
-        c.assertResult(driver, homePage.getPageTitle(), "Welcome to IBusiness");
-    }
-
-    @Test
-    public void clickOnText()
-    {
         homePage.clickLogInText();
-        c.assertResult(driver, logInPage.getPageTitle(),"Welcome, Please Sign In");
+        logInPage.enterUserDetails();
     }
 
     @AfterMethod
@@ -66,5 +45,4 @@ public class HomePageTest
 
         driver.quit();
     }
-
 }

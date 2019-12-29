@@ -36,14 +36,15 @@ public class Commons
         }
     }
 
-    public void assertResult(WebDriver driver, String result, String expectedResult)
+    public void assertResult(WebDriver driver, String actualResult, String expectedResult)
     {
-        if(result.equals(expectedResult))
+        if(actualResult.equals(expectedResult))
         {
-            Assert.assertEquals(result, expectedResult);
+            Assert.assertEquals(actualResult, expectedResult);
         } else {
-            Assert.assertEquals(result, expectedResult);
             takeSnapShot(driver, expectedResult);
+            Assert.assertEquals(actualResult, expectedResult);
+            //takeSnapShot(driver, expectedResult);
         }
     }
 }
