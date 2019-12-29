@@ -2,7 +2,7 @@ package com.platform.project.test;
 
 import com.platform.project.commons.Commons;
 import com.platform.project.commons.WebDriverManager;
-import com.platform.project.pageObjects.HomePage;
+import com.platform.project.pageObjects.*;
 import com.platform.project.pageObjects.LogInPage;
 import com.platform.project.pageObjects.WelcomePage;
 import org.junit.Ignore;
@@ -11,6 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static com.platform.project.commons.Commons.assertResult;
+
 public class WelcomePageTest
 {
     WebDriver driver, driver1;
@@ -18,7 +20,7 @@ public class WelcomePageTest
     HomePage homePage, homePage1;
     WelcomePage welcomePage, welcomePage1;
     WebDriverManager webDriverManager, webDriverManager1;
-    Commons c;
+    //Commons c;
 
     @BeforeMethod
     public void setUp()
@@ -28,7 +30,6 @@ public class WelcomePageTest
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
         welcomePage = new WelcomePage(driver);
-        c = new Commons();
 
         // webDriverManager1 = new WebDriverManager();
         //driver1 = webDriverManager1.getDriver("firefox");
@@ -40,42 +41,47 @@ public class WelcomePageTest
     @Test
     public void welcomePageTest()
     {
+        homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetails();
-        c.assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-        welcomePage.logOff();
+        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
+        //welcomePage.logOff();
     }
 
 
     @Test
     public void enterCredFromConfigTest()
     {
+        homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromConfig();
-        c.assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-        welcomePage.logOff();
+        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
+        //welcomePage.logOff();
     }
 
-    @Ignore
+    @Test
     public void enterCredFromExcel()
     {
-
+        homePage.openHomePage();
+        homePage.clickLogInText();
+        logInPage.enterUserDetailsFromExcel();
+        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
     }
 
     @Test
     public void twoUsersLogOnatSameTime()
     {
+        homePage.openHomePage();
+        //homePage1.openHomePage();
+
         homePage.clickLogInText();
         //homePage1.clickLogInText();
 
         logInPage.enterUserDetailsFromConfig();
         //logInPage1.enterUserDetails();
 
-        c.assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
+        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
         //Assert.assertEquals(welcomePage1.getPageTitle(), "Welcome to iBusiness");
-
-        welcomePage.logOff();
-        //welcomePage1.logOff();
     }
 
     @Test
@@ -83,7 +89,7 @@ public class WelcomePageTest
     {
         homePage.clickLogInText();
         logInPage.enterUserDetailsError();
-        c.assertResult(driver, logInPage.getErrorMsg(), " Error: No match for E-Mail Address and/or Password.");
+        assertResult(driver, logInPage.getErrorMsg(), " Error: No match for E-Mail Address and/or Password.");
     }
 
 

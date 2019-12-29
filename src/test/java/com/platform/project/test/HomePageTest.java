@@ -1,16 +1,15 @@
 package com.platform.project.test;
 
-import com.platform.project.commons.Commons;
 import com.platform.project.commons.WebDriverManager;
-import com.platform.project.pageObjects.HomePage;
+import com.platform.project.pageObjects.*;
 import com.platform.project.pageObjects.LogInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static com.platform.project.commons.Commons.assertResult;
 
 
 public class HomePageTest
@@ -19,7 +18,7 @@ public class HomePageTest
     HomePage homePage;
     LogInPage logInPage;
     WebDriverManager webDriverManager;
-    Commons c;
+    //Commons c;
     Logger log;
 
     @BeforeMethod
@@ -29,7 +28,7 @@ public class HomePageTest
         driver = webDriverManager.getDriver("chrome");
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
-        c = new Commons();
+        //c = new Commons();
         log = Logger.getLogger(HomePageTest.class);
 
     }
@@ -38,8 +37,7 @@ public class HomePageTest
     public void openHomePage()
     {
         homePage.openHomePage();
-        //c.takeSnapShot(driver, "test");
-        c.assertResult(driver, homePage.getPageTitle(), "Welcome to iBusiness");
+        assertResult(driver, homePage.getPageTitle(), "Welcome to iBusiness");
 
     }
 
@@ -47,19 +45,22 @@ public class HomePageTest
     public void openHomePage2()
     {
         homePage.openHomePage();
-        //Assert.assertEquals(homePage.getPageTitle(), "Welcome to iBusiness2");
-        //c.takeSnapShot(driver, "test");
-
-        c.assertResult(driver, homePage.getPageTitle(), "Welcome to IBusiness");
+        assertResult(driver, homePage.getPageTitle(), "Welcome to IBusiness");
     }
 
-    @Test
+    /*@Test
     public void clickOnText()
     {
         homePage.clickLogInText();
-        c.assertResult(driver, logInPage.getPageTitle(),"Welcome, Please Sign In");
-    }
+        assertResult(driver, logInPage.getPageTitle(),"Welcome, Please Sign In");
+    }*/
 
+    @Test
+    public void openAllLinks()
+    {
+        homePage.openHomePage();
+        homePage.checkAllLinks();
+    }
     @AfterMethod
     public void cleanUp()
     {

@@ -1,6 +1,5 @@
 package com.platform.project.commons;
 
-import com.platform.project.pageObjects.HomePage;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -18,7 +17,7 @@ public class Commons
     private Logger logger = Logger.getLogger(Commons.class);
 
 
-    public static void takeSnapShot(WebDriver webdriver, String name)
+    public static void takeSnapShot(WebDriver webdriver, Object name)
     {
         try
         {
@@ -27,7 +26,7 @@ public class Commons
             //Call getScreenshotAs method to create image file
             File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
             //move image file to new destination
-            File destinationFile = new File(fileFolder+ "/" + name + ".png");
+            File destinationFile = new File(fileFolder+ "/" + String.valueOf(name) + ".png");
             //copy file at destination
             FileUtils.copyFile(srcFile, destinationFile);
         } catch (IOException e)
@@ -36,15 +35,14 @@ public class Commons
         }
     }
 
-    public void assertResult(WebDriver driver, String actualResult, String expectedResult)
+    public static void assertResult(WebDriver driver, Object actualResult, Object expectedResult)
     {
-        if(actualResult.equals(expectedResult))
+        if(actualResult == expectedResult)
         {
             Assert.assertEquals(actualResult, expectedResult);
         } else {
             takeSnapShot(driver, expectedResult);
             Assert.assertEquals(actualResult, expectedResult);
-            //takeSnapShot(driver, expectedResult);
         }
     }
 }

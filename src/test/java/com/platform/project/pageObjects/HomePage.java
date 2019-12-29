@@ -8,6 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 
 public class HomePage
@@ -47,7 +52,6 @@ public class HomePage
 
     public void clickLogInText()
     {
-        openHomePage();
         logger.info("Logging in");
         //driver.findElement(By.xpath("//u[contains(text(),'log yourself in')]")).click();
         logYourselfIn.click();
@@ -55,22 +59,59 @@ public class HomePage
 
     public void clickCreateAccount()
     {
-        //openHomePage();
         createAccount.click();
     }
-    public void getAllLinks()
+    public void checkAllLinks()
     {
-        openHomePage();
+        HttpURLConnection huc = null;
+        String homePage = ReadPropertyFile.getConfigPropertyVal("homePageUrl");
+        int respCode = 200;
+        String url = "";
+
         List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+        Iterator<WebElement> it = allLinks.iterator();
+
         logger.info("All the web links are: ");
 
-        /*for(WebElement we: allLinks)
+        while (it.hasNext())
         {
-            //openHomePage();
+            url = it.next().getAttribute("href");
+            System.out.println(url);
+            if (url == null || url.isEmpty())
+            {
+                System.out.println("URL is either not configured for anchor tag or it is empty");
+                continue;
+            }
 
-            logger.info(we.getText() + " - " + we.getAttribute("href"));
-            logger.info(allLinks.size());
-        }*/
+            if (!url.startsWith(homePage))
+            {
+                System.out.println("URL belongs to another domain, skipping it.");
+                continue;
+            }
+
+            try
+            {
+                huc = (HttpURLConnection) (new URL(url).openConnection());
+                huc.setRequestMethod("HEAD");
+                huc.connect();
+                respCode = huc.getResponseCode();
+
+                if (respCode >= 400)
+                {
+                    System.out.println(url + " is a broken link.");
+                } else
+                {
+                    System.out.println(url + " is a valid link.");
+                }
+            } catch (MalformedURLException mue)
+            {
+                mue.printStackTrace();
+            } catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+        }
+
     }
 
 

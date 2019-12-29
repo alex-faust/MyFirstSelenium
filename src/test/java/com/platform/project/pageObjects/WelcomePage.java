@@ -22,18 +22,12 @@ public class WelcomePage
         PageFactory.initElements(driver, this);
     }
 
-
     public String getPageTitle()
     {
         logger.info("Getting title");
         String title = pageTitle.getText();
         logger.info("Welcome page title is: " + title);
         return title;
-    }
-
-    public void logOff()
-    {
-        logOffButton.click();
     }
 
 }

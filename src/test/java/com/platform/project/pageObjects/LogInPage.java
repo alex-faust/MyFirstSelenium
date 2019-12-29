@@ -2,19 +2,22 @@ package com.platform.project.pageObjects;
 
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.SimpleTimeZone;
-import java.util.spi.CalendarDataProvider;
-
+import java.util.Iterator;
 
 public class LogInPage
 {
@@ -60,7 +63,7 @@ public class LogInPage
     WebElement continueButton;
 
     private WebDriver driver;
-    private Logger logger = Logger.getLogger(LogInPage.class);
+    private Logger log = Logger.getLogger(LogInPage.class);
 
     public LogInPage(WebDriver driver)
     {
@@ -70,16 +73,16 @@ public class LogInPage
 
     public String getPageTitle()
     {
-        logger.info("Getting title");
+        log.info("Getting title");
         //WebElement pageTitle = driver.findElement(By.xpath("//h1[contains(text(),'Welcome, Please Sign In')]"));
         String title = pageTitle.getText();
-        logger.info("Login page title is: " + title);
+        log.info("Login page title is: " + title);
         return title;
     }
 
     public void enterUserDetails()
     {
-        logger.info("Entering username and password");
+        log.info("Entering username and password");
         String username = "justagile@test.com";
         String password ="test123";
         usernameBox.sendKeys(username);
@@ -89,7 +92,7 @@ public class LogInPage
 
     public void enterUserDetailsFromConfig()
     {
-        logger.info("Entering username and password");
+        log.info("Entering username and password");
         String username = ReadPropertyFile.getConfigPropertyVal("username");
         String password = ReadPropertyFile.getConfigPropertyVal("password");
         usernameBox.sendKeys(username);
@@ -97,9 +100,37 @@ public class LogInPage
         signInButton.click();
     }
 
+    public void enterUserDetailsFromExcel()
+    {
+        log.info("Entering details from excel.");
+        String usernameExcel = "", passwordExcel = "";
+        try
+        {
+            FileInputStream file = new FileInputStream(
+                    new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\credentials.xlsx"));
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            for (Row row: sheet)
+            {
+                Iterator cellIterator = row.cellIterator();
+                usernameExcel = String.valueOf(cellIterator.next());
+                passwordExcel = String.valueOf(cellIterator.next());
+            }
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+        log.info("username is: " + usernameExcel);
+        log.info("password is: " + passwordExcel);
+        usernameBox.sendKeys(usernameExcel);
+        passwordBox.sendKeys(passwordExcel);
+        signInButton.click();
+    }
     public void enterUserDetailsError()
     {
-        logger.info("Entering username and password");
+        log.info("Entering username and password");
         String username = "";
         String password = "";
         usernameBox.sendKeys(username);
@@ -124,7 +155,7 @@ public class LogInPage
         DateFormat df = new SimpleDateFormat(strDate);
         String fd = df.format(date);
         String email = fd + ReadPropertyFile.getConfigPropertyVal("emailAddress").trim();
-        logger.info("Creating an account");
+        log.info("Creating an account");
         firstName.sendKeys(ReadPropertyFile.getConfigPropertyVal("firstname"));
         lastName.sendKeys(ReadPropertyFile.getConfigPropertyVal("lastname"));
         dateOfBirth.sendKeys(ReadPropertyFile.getConfigPropertyVal("dateOfBirth"));

@@ -1,7 +1,6 @@
-2019-12-28 16:40:33,615, 0(ms), [com.platform.project.commons.WebDriverManager] - Chrome browser detected.
-2019-12-28 16:40:40,045, 6430(ms), [com.platform.project.commons.WebDriverManager] - Driver initialization successful.
-2019-12-28 16:40:40,069, 6454(ms), [com.platform.project.pageObjects.HomePage] - Opening Homepage
-2019-12-28 16:40:40,069, 6454(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forhomePageUrl is http://107.170.213.234/catalog/
-2019-12-28 16:40:41,845, 8230(ms), [com.platform.project.pageObjects.HomePage] - Logging in
-2019-12-28 16:40:42,157, 8542(ms), [com.platform.project.pageObjects.LogInPage] - Getting title
-2019-12-28 16:40:42,221, 8606(ms), [com.platform.project.pageObjects.LogInPage] - Login page title is: Welcome, Please Sign In
+2019-12-28 19:58:07,633, 0(ms), [com.platform.project.commons.WebDriverManager] - Chrome browser detected.
+2019-12-28 19:58:13,333, 5700(ms), [com.platform.project.commons.WebDriverManager] - Driver initialization successful.
+2019-12-28 19:58:13,349, 5716(ms), [com.platform.project.pageObjects.HomePage] - Opening Homepage
+2019-12-28 19:58:13,349, 5716(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forhomePageUrl is http://107.170.213.234/catalog/
+2019-12-28 19:58:15,735, 8102(ms), [com.platform.project.pageObjects.HomePage] - Getting title
+2019-12-28 19:58:15,775, 8142(ms), [com.platform.project.pageObjects.HomePage] - Home page title is: Welcome to iBusiness
