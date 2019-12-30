@@ -1,6 +1,4 @@
-2019-12-28 19:58:07,633, 0(ms), [com.platform.project.commons.WebDriverManager] - Chrome browser detected.
-2019-12-28 19:58:13,333, 5700(ms), [com.platform.project.commons.WebDriverManager] - Driver initialization successful.
-2019-12-28 19:58:13,349, 5716(ms), [com.platform.project.pageObjects.HomePage] - Opening Homepage
-2019-12-28 19:58:13,349, 5716(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forhomePageUrl is http://107.170.213.234/catalog/
-2019-12-28 19:58:15,735, 8102(ms), [com.platform.project.pageObjects.HomePage] - Getting title
-2019-12-28 19:58:15,775, 8142(ms), [com.platform.project.pageObjects.HomePage] - Home page title is: Welcome to iBusiness
+2019-12-29 22:36:42,833, 0(ms), [com.platform.project.commons.WebDriverManager] - Chrome browser detected.
+2019-12-29 22:36:48,580, 5747(ms), [com.platform.project.commons.WebDriverManager] - Driver initialization successful.
+2019-12-29 22:36:48,605, 5772(ms), [com.platform.project.pageObjects.HomePage] - Opening Homepage
+2019-12-29 22:36:48,605, 5772(ms), [com.platform.project.commons.ReadPropertyFile] - Value in property file forhomePageUrl is http://107.170.213.234/catalog/
