@@ -35,22 +35,6 @@ public class LogInPageTest
         assertResult(driver, logInPage.getPageTitle(), "Welcome, Please Sign In");
     }
 
-    /*@Test
-    public void enterUserDetails()
-    {
-        openLoginPage();
-        logInPage.enterUserDetails();
-        c.assertResult();
-    }*/
-
-    /*public void enterUserDetailsfromConfig()
-    {
-        openLoginPage();
-        logInPage.enterUserDetailsFromConfig();
-    }*/
-
-
-
     @AfterMethod
     public void cleanUp()
     {

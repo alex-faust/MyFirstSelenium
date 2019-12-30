@@ -9,21 +9,21 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CheckoutPage
 {
-    @FindBy(xpath = "//h1[contains(text(),'Delivery Information')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement deliveryInfo;
-    @FindBy(xpath = "//h1[contains(text(),'Payment Information')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement paymentInfo;
-    @FindBy(xpath = "//h1[contains(text(),'Order Confirmation')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement orderConfirmation;
-    @FindBy(xpath = "//h1[contains(text(),'Your Order Has Been Processed!')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement processedOrder;
     @FindBy(xpath = "//tr[@class='moduleRowSelected']//input[@name='payment']")
     WebElement cashOnDeliveryBtn;
     @FindBy(xpath = "//tr[@class='moduleRow']//input[@name='payment']")
     WebElement paypalBtn;
-    @FindBy(xpath = "//span[contains(text(),'Continue')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[6]/div[2]/span[1]/button[1]/span[2]")
     WebElement continueButton;
-    @FindBy(xpath = "//span[contains(text(),'Confirm Order')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[3]/div[2]/span[1]/button[1]/span[2]")
     WebElement confirmOrder;
 
 
@@ -64,4 +64,6 @@ public class CheckoutPage
         log.info("Order Confirmation: " + text);
         return text;
     }
+
+
 }

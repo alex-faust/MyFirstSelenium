@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 public class LogInPage
 {
-    @FindBy(xpath = "//h1[contains(text(),'Welcome, Please Sign In')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement pageTitle;
     @FindBy(xpath = "//input[@name='email_address']")
     WebElement usernameBox;
@@ -31,36 +31,8 @@ public class LogInPage
     WebElement signInButton;
     @FindBy(xpath = "//td[@class='messageStackError']")
     WebElement loginError;
-    @FindBy(xpath = "//a[contains(text(),'Password forgotten? Click here.')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/form[1]/p[1]/a[1]")
     WebElement passwordForgottenLink;
-    @FindBy(xpath = "//input[@name='firstname']")
-    WebElement firstName;
-    @FindBy(xpath = "//input[@name='lastname']")
-    WebElement lastName;
-    @FindBy(xpath = "//input[@id='dob']")
-    WebElement dateOfBirth;
-    @FindBy(xpath = "//input[@name='email_address']")
-    WebElement emailAddress;
-    @FindBy(xpath = "//input[@name='street_address']")
-    WebElement streetAddress;
-    @FindBy(xpath = "//input[@name='postcode']")
-    WebElement postCode;
-    @FindBy(xpath = "//input[@name='city']")
-    WebElement city;
-    @FindBy(xpath = "//input[@name='state']")
-    WebElement state;
-    @FindBy(xpath = "//input[@name='telephone']")
-    WebElement phoneNumber;
-    @FindBy(xpath = "//input[@name='password']")
-    WebElement yourPassword;
-    @FindBy(xpath = "//input[@name='confirmation']")
-    WebElement yourPasswordConfirm;
-    @FindBy(xpath = "//body//option[224]")
-    WebElement country;
-    @FindBy(xpath = "//div[2]//table[1]//tbody[1]//tr[1]//td[2]//input[1]")
-    WebElement genderMale;
-    @FindBy(xpath = "//span[contains(text(),'Continue')]")
-    WebElement continueButton;
 
     private WebDriver driver;
     private Logger log = Logger.getLogger(LogInPage.class);
@@ -74,7 +46,6 @@ public class LogInPage
     public String getPageTitle()
     {
         log.info("Getting title");
-        //WebElement pageTitle = driver.findElement(By.xpath("//h1[contains(text(),'Welcome, Please Sign In')]"));
         String title = pageTitle.getText();
         log.info("Login page title is: " + title);
         return title;
@@ -82,9 +53,12 @@ public class LogInPage
 
     public void enterUserDetails()
     {
+        //need to fix this
         log.info("Entering username and password");
         String username = "justagile@test.com";
         String password ="test123";
+        log.info("Username is: " + username);
+        log.info("Password is: " + password);
         usernameBox.sendKeys(username);
         passwordBox.sendKeys(password);
         signInButton.click();
@@ -128,11 +102,14 @@ public class LogInPage
         passwordBox.sendKeys(passwordExcel);
         signInButton.click();
     }
+
     public void enterUserDetailsError()
     {
         log.info("Entering username and password");
         String username = "";
         String password = "";
+        log.info("Username is: " + username);
+        log.info("Password is: " + password);
         usernameBox.sendKeys(username);
         passwordBox.sendKeys(password);
         signInButton.click();
@@ -148,28 +125,4 @@ public class LogInPage
         passwordForgottenLink.click();
     }
 
-    public void createAnAccount()
-    {
-        Date date = new Date();
-        String strDate = "hhmmssa";
-        DateFormat df = new SimpleDateFormat(strDate);
-        String fd = df.format(date);
-        String email = fd + ReadPropertyFile.getConfigPropertyVal("emailAddress").trim();
-        log.info("Creating an account");
-        firstName.sendKeys(ReadPropertyFile.getConfigPropertyVal("firstname"));
-        lastName.sendKeys(ReadPropertyFile.getConfigPropertyVal("lastname"));
-        dateOfBirth.sendKeys(ReadPropertyFile.getConfigPropertyVal("dateOfBirth"));
-        emailAddress.sendKeys(email);
-        streetAddress.sendKeys(ReadPropertyFile.getConfigPropertyVal("streetAddress"));
-        postCode.sendKeys(ReadPropertyFile.getConfigPropertyVal("postCode"));
-        city.sendKeys(ReadPropertyFile.getConfigPropertyVal("city"));
-        state.sendKeys(ReadPropertyFile.getConfigPropertyVal("state"));
-        phoneNumber.sendKeys(ReadPropertyFile.getConfigPropertyVal("phoneNumber"));
-        yourPassword.sendKeys(ReadPropertyFile.getConfigPropertyVal("yourPassword"));
-        yourPasswordConfirm.sendKeys(ReadPropertyFile.getConfigPropertyVal("yourPasswordConfirm"));
-        country.click();
-        genderMale.click();
-        continueButton.click();
-
-    }
 }

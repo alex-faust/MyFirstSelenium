@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WelcomePage
 {
-    @FindBy(xpath = "//h1[contains(text(),'Welcome to iBusiness')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement pageTitle;
     @FindBy(xpath = "//span[contains(text(),'Log Off')]")
     WebElement logOffButton;
@@ -30,4 +30,8 @@ public class WelcomePage
         return title;
     }
 
+    public void logOff()
+    {
+        logOffButton.click();
+    }
 }

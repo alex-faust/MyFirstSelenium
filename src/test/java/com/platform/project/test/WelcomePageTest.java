@@ -15,12 +15,11 @@ import static com.platform.project.commons.Commons.assertResult;
 
 public class WelcomePageTest
 {
-    WebDriver driver, driver1;
-    LogInPage logInPage, logInPage1;
-    HomePage homePage, homePage1;
-    WelcomePage welcomePage, welcomePage1;
-    WebDriverManager webDriverManager, webDriverManager1;
-    //Commons c;
+    WebDriver driver;
+    LogInPage logInPage;
+    HomePage homePage;
+    WelcomePage welcomePage;
+    WebDriverManager webDriverManager;
 
     @BeforeMethod
     public void setUp()
@@ -30,58 +29,6 @@ public class WelcomePageTest
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
         welcomePage = new WelcomePage(driver);
-
-        // webDriverManager1 = new WebDriverManager();
-        //driver1 = webDriverManager1.getDriver("firefox");
-        //omePage1 = new HomePage(driver1);
-        //logInPage1 = new LogInPage(driver1);
-        //welcomePage1 = new WelcomePage(driver1);
-    }
-
-    @Test
-    public void welcomePageTest()
-    {
-        homePage.openHomePage();
-        homePage.clickLogInText();
-        logInPage.enterUserDetails();
-        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-        //welcomePage.logOff();
-    }
-
-
-    @Test
-    public void enterCredFromConfigTest()
-    {
-        homePage.openHomePage();
-        homePage.clickLogInText();
-        logInPage.enterUserDetailsFromConfig();
-        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-        //welcomePage.logOff();
-    }
-
-    @Test
-    public void enterCredFromExcel()
-    {
-        homePage.openHomePage();
-        homePage.clickLogInText();
-        logInPage.enterUserDetailsFromExcel();
-        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-    }
-
-    @Test
-    public void twoUsersLogOnatSameTime()
-    {
-        homePage.openHomePage();
-        //homePage1.openHomePage();
-
-        homePage.clickLogInText();
-        //homePage1.clickLogInText();
-
-        logInPage.enterUserDetailsFromConfig();
-        //logInPage1.enterUserDetails();
-
-        assertResult(driver, welcomePage.getPageTitle(), "Welcome to iBusiness");
-        //Assert.assertEquals(welcomePage1.getPageTitle(), "Welcome to iBusiness");
     }
 
     @Test
@@ -91,8 +38,6 @@ public class WelcomePageTest
         logInPage.enterUserDetailsError();
         assertResult(driver, logInPage.getErrorMsg(), " Error: No match for E-Mail Address and/or Password.");
     }
-
-
 
     @AfterMethod
     public void cleanUp()

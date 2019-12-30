@@ -6,24 +6,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ShoppingCartPage
+public class LogOffPage
 {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/h1[1]")
     WebElement pageTitle;
 
     private WebDriver driver;
-    private Logger log = Logger.getLogger(ShoppingCartPage.class);
+    private Logger log = Logger.getLogger(WelcomePage.class);
 
-    public ShoppingCartPage(WebDriver driver)
+    public LogOffPage(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     public String getPageTitle()
     {
-        String title = pageTitle.getText();
-        log.info("Cart age title is: " + title);
-        return title;
+
+        String text = pageTitle.getText();
+        log.info("Page title is: " + text);
+        return text;
     }
 }

@@ -16,7 +16,6 @@ public class CheckoutPageTest
     HomePage homePage;
     LogInPage logInPage;
     WebDriverManager webDriverManager;
-    Commons c;
     Logger log;
 
     @BeforeMethod
@@ -26,7 +25,6 @@ public class CheckoutPageTest
         driver = webDriverManager.getDriver("chrome");
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
-        c = new Commons();
         log = Logger.getLogger(HomePageTest.class);
 
     }
@@ -42,7 +40,6 @@ public class CheckoutPageTest
     @AfterMethod
     public void cleanUp()
     {
-
         driver.quit();
     }
 }

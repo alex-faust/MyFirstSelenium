@@ -10,13 +10,13 @@ public class ForgottenPasswordPage
 {
     @FindBy(xpath = "//input[@name='email_address']")
     WebElement emailAddress;
-    @FindBy(xpath = "//span[contains(text(),'Continue')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[2]/span[1]/span[1]/button[1]/span[2]")
     WebElement continueButton;
     @FindBy(xpath = "//td[@class='messageStackError']")
     WebElement errorMessage;
 
     private WebDriver driver;
-    private Logger logger = Logger.getLogger(ForgottenPasswordPage.class);
+    private Logger log = Logger.getLogger(ForgottenPasswordPage.class);
 
     public ForgottenPasswordPage(WebDriver driver)
     {
