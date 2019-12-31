@@ -56,7 +56,6 @@ public class CreateAccountSuccess
     public String getPageTitle()
     {
         log.info("Getting title");
-        //WebElement pageTitle = driver.findElement(By.xpath("//h1[contains(text(),'Welcome, Please Sign In')]"));
         String title = pageTitle.getText();
         log.info("Login page title is: " + title);
         return title;

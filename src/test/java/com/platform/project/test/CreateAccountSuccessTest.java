@@ -15,8 +15,6 @@ import static com.platform.project.commons.Commons.assertResult;
 public class CreateAccountSuccessTest
 {
     WebDriver driver;
-    Commons c;
-    //LogInPage logInPage;
     HomePage homePage;
     WebDriverManager webDriverManager;
     CreateAccountSuccess cas;
@@ -27,7 +25,6 @@ public class CreateAccountSuccessTest
         webDriverManager = new WebDriverManager();
         driver = webDriverManager.getDriver("chrome");
         homePage = new HomePage(driver);
-        //logInPage = new LogInPage(driver);
         cas = new CreateAccountSuccess(driver);
     }
 

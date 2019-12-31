@@ -34,6 +34,7 @@ public class WelcomePageTest
     @Test
     public void noEmailPasswordMatch()
     {
+        homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsError();
         assertResult(driver, logInPage.getErrorMsg(), " Error: No match for E-Mail Address and/or Password.");
@@ -43,6 +44,5 @@ public class WelcomePageTest
     public void cleanUp()
     {
         driver.quit();
-        //driver1.quit();
     }
 }

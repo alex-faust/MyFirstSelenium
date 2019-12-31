@@ -117,6 +117,7 @@ public class LogInPage
 
     public String getErrorMsg()
     {
+        log.info("Getting log in error.");
         return loginError.getText();
     }
 

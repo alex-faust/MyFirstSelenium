@@ -37,14 +37,12 @@ public class ForgottenPasswordPageTest
     @Test
     public void forgotPasswordTest()
     {
+        homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.passwordForgotten();
-
-        //forgottenPasswordPage.getNoRecordsFound();
         assertResult(driver, forgottenPasswordPage.getNoRecordsFound(),
                 " Error: The E-Mail Address was not " +
                         "found in our records, please try again.");
-
     }
 
 
@@ -52,7 +50,6 @@ public class ForgottenPasswordPageTest
     public void cleanUp()
     {
         driver.quit();
-        //driver1.quit();
     }
 
 }

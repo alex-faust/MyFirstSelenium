@@ -33,10 +33,16 @@ public class HomePage
     WebElement logYourselfIn;
     @FindBy(xpath = "//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[2]/u[1]")
     WebElement createAccount;
-    @FindBy(xpath = "//select[@name='manufacturers_id']")
+    @FindBy(xpath = "//div[@id='storeLogo']//a//img")
+    WebElement goToHomePage;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[2]/div[2]/span[1]/span[1]/button[1]/span[2]")
+    WebElement addToCartButton;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/span[1]/a[1]/span[2]")
+    WebElement cartContents;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/span[2]/a[1]/span[2]")
+    WebElement checkOutBtn;
 
     private WebDriver driver;
-    ProductInfoPage productInfo;
     private Logger log = Logger.getLogger(HomePage.class);
 
     public HomePage(WebDriver driver)
@@ -62,8 +68,7 @@ public class HomePage
 
     public void clickLogInText()
     {
-        //logger.info("Logging in");
-        //driver.findElement(By.xpath("//u[contains(text(),'log yourself in')]")).click();
+        log.info("Clicking log in text");
         logYourselfIn.click();
     }
 
@@ -143,10 +148,11 @@ public class HomePage
         return values;
     }
 
-    public void selectForItem()
+    public void selectItems()
     {
-        //String searchForItem;
         String[] items = new String[5];
+        double[] theirPrices = new double[5];
+        int count;
         try
         {
             FileInputStream file = new FileInputStream
@@ -154,24 +160,44 @@ public class HomePage
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            XSSFRow row1 = sheet.getRow(0);
-            XSSFCell cellValue1 = row1.getCell(0);
-            items[0] = String.valueOf(cellValue1);
+            for (int i = 0; i < items.length; i++)
+            {
+                XSSFRow row = sheet.getRow(i);
+                XSSFCell cellValue = row.getCell(0);
+                items[i] = String.valueOf(cellValue);
+            }
+            for (int j = 0; j < theirPrices.length; j++)
+            {
+                XSSFRow row = sheet.getRow(j);
+                XSSFCell cellValue = row.getCell(1);
+                theirPrices[j] = Double.valueOf(String.valueOf(cellValue));
+            }
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
 
-        //for(int i = 0; i < items.length; i++)
-        //{
-            WebElement webElement = driver.findElement(By.linkText(items[0]));
+        log.info("items in the array are: " + Arrays.toString(items));
+        log.info("items in the array are: " + Arrays.toString(theirPrices));
+
+        for(int i = 0; i < items.length; i++)
+        {
+            WebElement webElement = driver.findElement(By.linkText(items[i]));
             webElement.click();
-            driver.navigate().back();
-            //System.out.println(webElement);
-        //}
+            addToCartButton.click();
+            count = i+1;
+            log.info("Cartbutton text is: " + cartContents.getText());
+
+            if(cartContents.getText().equals("Cart Contents (" + count + ")"))
+            {
+                goToHomePage.click();
+            }
+        }
     }
 
-
-
+    public void goToCartContents()
+    {
+        cartContents.click();
+    }
 }

@@ -67,16 +67,9 @@ public class HomePageTest
         assertResult(driver, Arrays.toString(elementA), Arrays.toString(elementB));
     }
 
-    @Test
-    public void items()
-    {
-        homePage.openHomePage();
-        homePage.selectForItem();
-    }
     @AfterMethod
     public void cleanUp()
     {
-
         driver.quit();
     }
 
