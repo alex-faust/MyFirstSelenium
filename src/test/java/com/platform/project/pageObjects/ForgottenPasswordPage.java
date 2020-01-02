@@ -26,8 +26,8 @@ public class ForgottenPasswordPage
 
     public String getNoRecordsFound()
     {
-        //emailAddress.click();
         continueButton.click();
+        log.info("Error message found.");
         return errorMessage.getText();
     }
 }

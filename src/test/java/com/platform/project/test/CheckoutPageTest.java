@@ -34,12 +34,31 @@ public class CheckoutPageTest
     }
 
     @Test
-    public void buyProducts()
+    public void buyProducts1()
     {
+        /**
+         * clicking on home page after adding item to the card
+         */
         homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromConfig();
-        homePage.selectItems();
+        homePage.selectItems1();
+        homePage.goToCartContents();
+        assertResult(driver, checkOutPage.verifyCart(),
+                "Your Order Has Been Processed!");
+    }
+
+
+    @Test
+    public void buyProducts2()
+    {
+        /**
+         * navigating backwards after adding item to the cart
+         */
+        homePage.openHomePage();
+        homePage.clickLogInText();
+        logInPage.enterUserDetailsFromConfig();
+        homePage.selectItems2();
         homePage.goToCartContents();
         assertResult(driver, checkOutPage.verifyCart(),
                 "Your Order Has Been Processed!");

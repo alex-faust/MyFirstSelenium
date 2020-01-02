@@ -148,8 +148,16 @@ public class HomePage
         return values;
     }
 
-    public void selectItems()
+    public void selectItems1()
     {
+        /**
+         * 2. Open the homepage
+         * -> click on a product
+         * -> add the product to your cart
+         * -> Open the homepage
+         * -> click on the next product
+         * -> etc.
+         */
         String[] items = new String[5];
         double[] theirPrices = new double[5];
         int count;
@@ -189,9 +197,69 @@ public class HomePage
             count = i+1;
             log.info("Cartbutton text is: " + cartContents.getText());
 
+            //checking if item was added into cart
             if(cartContents.getText().equals("Cart Contents (" + count + ")"))
             {
                 goToHomePage.click();
+            }
+        }
+    }
+
+    public void selectItems2()
+    {
+        /**
+         * 2. Open the homepage
+         * -> click on a product
+         * -> add the product to your cart
+         * -> go back twice
+         * -> click on the next product
+         * -> etc.
+         */
+        String[] items = new String[5];
+        double[] theirPrices = new double[5];
+        int count;
+        try
+        {
+            FileInputStream file = new FileInputStream
+                    (new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\Purchase Items.xlsx"));
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            for (int i = 0; i < items.length; i++)
+            {
+                XSSFRow row = sheet.getRow(i);
+                XSSFCell cellValue = row.getCell(0);
+                items[i] = String.valueOf(cellValue);
+            }
+            for (int j = 0; j < theirPrices.length; j++)
+            {
+                XSSFRow row = sheet.getRow(j);
+                XSSFCell cellValue = row.getCell(1);
+                theirPrices[j] = Double.valueOf(String.valueOf(cellValue));
+            }
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+        log.info("items in the array are: " + Arrays.toString(items));
+        log.info("items prices are: " + Arrays.toString(theirPrices));
+
+        for(int i = 0; i < items.length; i++)
+        {
+            WebElement webElement = driver.findElement(By.linkText(items[i]));
+            webElement.click();
+            addToCartButton.click();
+            count = i+1;
+            log.info("Cartbutton text is: " + cartContents.getText());
+
+            //checking if item was added into cart
+            if(cartContents.getText().equals("Cart Contents (" + count + ")"))
+            {
+                //goToHomePage.click();
+                driver.navigate().back();
+                driver.navigate().back();
             }
         }
     }
