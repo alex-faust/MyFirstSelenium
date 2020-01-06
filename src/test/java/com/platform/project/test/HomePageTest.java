@@ -1,20 +1,16 @@
 package com.platform.project.test;
 
+import com.platform.project.commons.Commons;
+import com.platform.project.commons.ReadPropertyFile;
 import com.platform.project.commons.WebDriverManager;
-import com.platform.project.pageObjects.*;
+import com.platform.project.pageObjects.HomePage;
 import com.platform.project.pageObjects.LogInPage;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
-import java.util.List;
-
-import static com.platform.project.commons.Commons.assertResult;
-
 
 public class HomePageTest
 {
@@ -22,35 +18,35 @@ public class HomePageTest
     HomePage homePage;
     LogInPage logInPage;
     WebDriverManager webDriverManager;
-    Logger log;
 
     @BeforeMethod
     public void setUp()
     {
         webDriverManager = new WebDriverManager();
-        driver = webDriverManager.getDriver("chrome");
+        driver = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
-        log = Logger.getLogger(HomePageTest.class);
     }
 
     @Test
     public void openHomePage()
     {
         homePage.openHomePage();
-        assertResult(driver, homePage.getPageTitle(), "Welcome to iBusiness");
+        Commons.check(driver, homePage.getPageTitle().equals("Welcome to iBusiness"), "Home Page Title didn't match.");
     }
 
     @Test
     public void openHomePage2()
     {
         homePage.openHomePage();
-        assertResult(driver, homePage.getPageTitle(), "Welcome to IBusiness");
+        Commons.check(driver, homePage.getPageTitle().equals("Welcome to IBusiness"), "Home Page Title didn't match.");
     }
 
     @Test
     public void openAllLinks()
     {
+        //need to get an assert for this test.
         homePage.openHomePage();
         homePage.checkAllLinks();
     }
@@ -64,7 +60,7 @@ public class HomePageTest
             "[Samsung]", "[Sierra]", "[Warner]"};
         homePage.openHomePage();
         String[] elementA = homePage.dropDownMenu();
-        assertResult(driver, Arrays.toString(elementA), Arrays.toString(elementB));
+        Commons.check(driver, Arrays.toString(elementA).equals(Arrays.toString(elementB)), "The drop down menu items are different");
     }
 
     @AfterMethod

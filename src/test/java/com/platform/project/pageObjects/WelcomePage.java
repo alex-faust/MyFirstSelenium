@@ -1,5 +1,6 @@
 package com.platform.project.pageObjects;
 
+import com.platform.project.commons.Commons;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,7 @@ public class WelcomePage
     WebElement logOffButton;
 
     private WebDriver driver;
-    private Logger logger = Logger.getLogger(WelcomePage.class);
+    private Logger log = Logger.getLogger(WelcomePage.class);
 
     public WelcomePage(WebDriver driver)
     {
@@ -24,10 +25,8 @@ public class WelcomePage
 
     public String getPageTitle()
     {
-        logger.info("Getting title");
-        String title = pageTitle.getText();
-        logger.info("Welcome page title is: " + title);
-        return title;
+        log.info("Getting title");
+        return Commons.getElementText(driver, pageTitle, 3);
     }
 
     public void logOff()

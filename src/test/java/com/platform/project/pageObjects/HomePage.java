@@ -1,5 +1,6 @@
 package com.platform.project.pageObjects;
 
+import com.platform.project.commons.Commons;
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Row;
@@ -60,10 +61,7 @@ public class HomePage
     public String getPageTitle()
     {
         log.info("Getting title");
-        //WebElement pageTitle = driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/h1"));
-        String title = pageTitle.getText();
-        log.info("Home page title is: " + title);
-        return title;
+        return Commons.getElementText(driver, pageTitle, 3);
     }
 
     public void clickLogInText()
@@ -133,15 +131,15 @@ public class HomePage
         WebElement element = driver.findElement(By.name("manufacturers_id"));
         Select selectElement = new Select(element);
         List<WebElement> elements = selectElement.getOptions();
-        log.info("There are " + (elements.size()-1) + " items in the drop down.");
+        log.info("There are " + (elements.size() - 1) + " items in the drop down.");
         String[] values = new String[elements.size() - 1];
-        for(int i = 1; i < elements.size(); i++)
+        for (int i = 1; i < elements.size(); i++)
         {
             String[] temp = elements.get(i).getText().split(" ");
-            values[i-1] = Arrays.toString(temp);
+            values[i - 1] = Arrays.toString(temp);
         }
 
-        for(String s: values)
+        for (String s : values)
         {
             log.info("The values are: " + s);
         }
@@ -161,44 +159,34 @@ public class HomePage
         String[] items = new String[5];
         double[] theirPrices = new double[5];
         int count;
-        try
-        {
-            FileInputStream file = new FileInputStream
-                    (new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\Purchase Items.xlsx"));
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            for (int i = 0; i < items.length; i++)
-            {
-                XSSFRow row = sheet.getRow(i);
-                XSSFCell cellValue = row.getCell(0);
-                items[i] = String.valueOf(cellValue);
-            }
-            for (int j = 0; j < theirPrices.length; j++)
-            {
-                XSSFRow row = sheet.getRow(j);
-                XSSFCell cellValue = row.getCell(1);
-                theirPrices[j] = Double.valueOf(String.valueOf(cellValue));
-            }
-        } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        for (int i = 0; i < items.length; i++)
+        {
+            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFCell cellValue = row.getCell(0);
+            items[i] = String.valueOf(cellValue);
         }
+        for (int j = 0; j < theirPrices.length; j++)
+        {
+            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFCell cellValue = row.getCell(1);
+            theirPrices[j] = Double.parseDouble(String.valueOf(cellValue));
+        }
+
 
         log.info("items in the array are: " + Arrays.toString(items));
         log.info("items in the array are: " + Arrays.toString(theirPrices));
 
-        for(int i = 0; i < items.length; i++)
+        for (int i = 0; i < items.length; i++)
         {
             WebElement webElement = driver.findElement(By.linkText(items[i]));
             webElement.click();
             addToCartButton.click();
-            count = i+1;
+            count = i + 1;
             log.info("Cartbutton text is: " + cartContents.getText());
 
             //checking if item was added into cart
-            if(cartContents.getText().equals("Cart Contents (" + count + ")"))
+            if (cartContents.getText().equals("Cart Contents (" + count + ")"))
             {
                 goToHomePage.click();
             }
@@ -218,44 +206,34 @@ public class HomePage
         String[] items = new String[5];
         double[] theirPrices = new double[5];
         int count;
-        try
-        {
-            FileInputStream file = new FileInputStream
-                    (new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\Purchase Items.xlsx"));
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            for (int i = 0; i < items.length; i++)
-            {
-                XSSFRow row = sheet.getRow(i);
-                XSSFCell cellValue = row.getCell(0);
-                items[i] = String.valueOf(cellValue);
-            }
-            for (int j = 0; j < theirPrices.length; j++)
-            {
-                XSSFRow row = sheet.getRow(j);
-                XSSFCell cellValue = row.getCell(1);
-                theirPrices[j] = Double.valueOf(String.valueOf(cellValue));
-            }
-        } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+
+        for (int i = 0; i < items.length; i++)
+        {
+            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFCell cellValue = row.getCell(0);
+            items[i] = String.valueOf(cellValue);
+        }
+        for (int j = 0; j < theirPrices.length; j++)
+        {
+            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFCell cellValue = row.getCell(1);
+            theirPrices[j] = Double.parseDouble(String.valueOf(cellValue));
         }
 
         log.info("items in the array are: " + Arrays.toString(items));
         log.info("items prices are: " + Arrays.toString(theirPrices));
 
-        for(int i = 0; i < items.length; i++)
+        for (int i = 0; i < items.length; i++)
         {
             WebElement webElement = driver.findElement(By.linkText(items[i]));
             webElement.click();
             addToCartButton.click();
-            count = i+1;
+            count = i + 1;
             log.info("Cartbutton text is: " + cartContents.getText());
 
             //checking if item was added into cart
-            if(cartContents.getText().equals("Cart Contents (" + count + ")"))
+            if (cartContents.getText().equals("Cart Contents (" + count + ")"))
             {
                 //goToHomePage.click();
                 driver.navigate().back();

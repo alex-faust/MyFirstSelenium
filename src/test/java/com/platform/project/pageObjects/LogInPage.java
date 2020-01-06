@@ -1,5 +1,6 @@
 package com.platform.project.pageObjects;
 
+import com.platform.project.commons.Commons;
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Row;
@@ -14,9 +15,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Iterator;
 
 public class LogInPage
@@ -46,9 +44,7 @@ public class LogInPage
     public String getPageTitle()
     {
         log.info("Getting title");
-        String title = pageTitle.getText();
-        log.info("Login page title is: " + title);
-        return title;
+        return Commons.getElementText(driver, pageTitle, 3);
     }
 
     public void enterUserDetails()
@@ -56,7 +52,7 @@ public class LogInPage
         //need to fix this
         log.info("Entering username and password");
         String username = "justagile@test.com";
-        String password ="test123";
+        String password = "test123";
         log.info("Username is: " + username);
         log.info("Password is: " + password);
         usernameBox.sendKeys(username);
@@ -78,24 +74,14 @@ public class LogInPage
     {
         log.info("Entering details from excel.");
         String usernameExcel = "", passwordExcel = "";
-        try
-        {
-            FileInputStream file = new FileInputStream(
-                    new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\credentials.xlsx"));
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            for (Row row: sheet)
-            {
-                Iterator cellIterator = row.cellIterator();
-                usernameExcel = String.valueOf(cellIterator.next());
-                passwordExcel = String.valueOf(cellIterator.next());
-            }
-        } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        for (Row row : Commons.openExcel(0))
+        {
+            Iterator cellIterator = row.cellIterator();
+            usernameExcel = String.valueOf(cellIterator.next());
+            passwordExcel = String.valueOf(cellIterator.next());
         }
+
         log.info("username is: " + usernameExcel);
         log.info("password is: " + passwordExcel);
         usernameBox.sendKeys(usernameExcel);
@@ -118,7 +104,7 @@ public class LogInPage
     public String getErrorMsg()
     {
         log.info("Getting log in error.");
-        return loginError.getText();
+        return Commons.getElementText(driver, loginError, 3);
     }
 
     public void passwordForgotten()

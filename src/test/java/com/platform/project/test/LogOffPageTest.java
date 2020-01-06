@@ -1,14 +1,18 @@
 package com.platform.project.test;
 
+import com.platform.project.commons.Commons;
+import com.platform.project.commons.ReadPropertyFile;
 import com.platform.project.commons.WebDriverManager;
-import com.platform.project.pageObjects.*;
+import com.platform.project.pageObjects.HomePage;
+import com.platform.project.pageObjects.LogInPage;
+import com.platform.project.pageObjects.LogOffPage;
 import com.platform.project.pageObjects.WelcomePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.platform.project.commons.Commons.assertResult;
+import static com.platform.project.commons.Commons.check;
 
 public class LogOffPageTest
 {
@@ -23,14 +27,16 @@ public class LogOffPageTest
     public void setUp()
     {
         webDriverManager = new WebDriverManager();
-        driver = webDriverManager.getDriver("chrome");
+        driver = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
         welcomePage = new WelcomePage(driver);
         logOff = new LogOffPage(driver);
 
         webDriverManager1 = new WebDriverManager();
-        driver1 = webDriverManager1.getDriver("firefox");
+        driver1 = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage1 = new HomePage(driver1);
         logInPage1 = new LogInPage(driver1);
         welcomePage1 = new WelcomePage(driver1);
@@ -44,7 +50,7 @@ public class LogOffPageTest
         homePage.clickLogInText();
         logInPage.enterUserDetails();
         welcomePage.logOff();
-        assertResult(driver, logOff.getPageTitle(), "Log Off");
+        Commons.check(driver, logOff.getPageTitle().equals("Log Off"), "Failed to reach LogOffPage");
     }
 
     @Test
@@ -54,7 +60,7 @@ public class LogOffPageTest
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromConfig();
         welcomePage.logOff();
-        assertResult(driver, logOff.getPageTitle(), "Log Off");
+        Commons.check(driver, logOff.getPageTitle().equals("Log Off"), "enterCredFromConfigFail");
     }
 
     @Test
@@ -64,12 +70,14 @@ public class LogOffPageTest
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromExcel();
         welcomePage.logOff();
-        assertResult(driver, logOff.getPageTitle(), "Log Off");
+        Commons.check(driver, logOff.getPageTitle().equals("Log Off"), "enterCredFromExcel");
     }
 
     @Test
     public void twoUsersLogOnAtSameTime()
     {
+        //need to change this to make sure both are correct instead of just one
+        //checking the first one, the second one wont be checked
         homePage.openHomePage();
         homePage1.openHomePage();
 
@@ -82,8 +90,8 @@ public class LogOffPageTest
         welcomePage.logOff();
         welcomePage1.logOff();
 
-        assertResult(driver, logOff.getPageTitle(), "Log Off");
-        assertResult(driver, logOff1.getPageTitle(), "Log Off");
+        Commons.check(driver, logOff.getPageTitle().equals("Log Off"), "firstOfTwoUsersFail");
+        Commons.check(driver, logOff.getPageTitle().equals("Log Off"), "secondOfTwoUsersFail");
     }
 
 

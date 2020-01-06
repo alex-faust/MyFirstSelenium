@@ -1,20 +1,15 @@
 package com.platform.project.pageObjects;
 
+import com.platform.project.commons.Commons;
 import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Arrays;
 
 public class CheckOutPage
@@ -49,33 +44,22 @@ public class CheckOutPage
         double[] priceTotals = new double[5];
         double count = 0.0;
         double values = 0.0;
-        try
-        {
-            FileInputStream file = new FileInputStream(new File("C:\\Users\\abcle\\IdeaProjects\\MyFirstSelenium\\files\\Purchase Items.xlsx"));
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            //retrieve items
-            for (int i = 0; i < items.length; i++)
-            {
-                XSSFRow row = sheet.getRow(i);
-                XSSFCell cellValue = row.getCell(0);
-                items[i] = String.valueOf(cellValue);
-            }
-            //retrieve price totals
-            for (int j = 0; j < priceTotals.length; j++)
-            {
-                XSSFRow row = sheet.getRow(j);
-                XSSFCell cellValue = row.getCell(1);
-                priceTotals[j] = Double.parseDouble(String.valueOf(cellValue));
-            }
-        } catch (FileNotFoundException fnfe)
+        //retrieve items
+        for (int i = 0; i < items.length; i++)
         {
-            fnfe.printStackTrace();
-        } catch (IOException ioe)
-        {
-            ioe.printStackTrace();
+            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFCell cellValue = row.getCell(0);
+            items[i] = String.valueOf(cellValue);
         }
+        //retrieve price totals
+        for (int j = 0; j < priceTotals.length; j++)
+        {
+            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFCell cellValue = row.getCell(1);
+            priceTotals[j] = Double.parseDouble(String.valueOf(cellValue));
+        }
+
 
         //searching page for items and adding them to an array to compare items from excel sheet
         for (int l = 0; l < items.length; l++)

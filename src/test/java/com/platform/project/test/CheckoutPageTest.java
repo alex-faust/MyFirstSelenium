@@ -1,6 +1,7 @@
 package com.platform.project.test;
 
 import com.platform.project.commons.Commons;
+import com.platform.project.commons.ReadPropertyFile;
 import com.platform.project.commons.WebDriverManager;
 import com.platform.project.pageObjects.CheckOutPage;
 import com.platform.project.pageObjects.HomePage;
@@ -11,8 +12,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.platform.project.commons.Commons.assertResult;
-
 public class CheckoutPageTest
 {
     WebDriver driver;
@@ -20,17 +19,16 @@ public class CheckoutPageTest
     LogInPage logInPage;
     WebDriverManager webDriverManager;
     CheckOutPage checkOutPage;
-    Logger log;
 
     @BeforeMethod
     public void setUp()
     {
         webDriverManager = new WebDriverManager();
-        driver = webDriverManager.getDriver("chrome");
+        driver = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
         checkOutPage = new CheckOutPage(driver);
-        log = Logger.getLogger(HomePageTest.class);
     }
 
     @Test
@@ -44,8 +42,7 @@ public class CheckoutPageTest
         logInPage.enterUserDetailsFromConfig();
         homePage.selectItems1();
         homePage.goToCartContents();
-        assertResult(driver, checkOutPage.verifyCart(),
-                "Your Order Has Been Processed!");
+        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"), "buyProducts1Fail");
     }
 
 
@@ -60,8 +57,7 @@ public class CheckoutPageTest
         logInPage.enterUserDetailsFromConfig();
         homePage.selectItems2();
         homePage.goToCartContents();
-        assertResult(driver, checkOutPage.verifyCart(),
-                "Your Order Has Been Processed!");
+        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"), "buyProducts2Fail");
     }
 
     @AfterMethod

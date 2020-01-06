@@ -1,17 +1,18 @@
 package com.platform.project.test;
 
-import com.platform.project.commons.*;
+import com.platform.project.commons.Commons;
+import com.platform.project.commons.ReadPropertyFile;
+import com.platform.project.commons.WebDriverManager;
 import com.platform.project.pageObjects.ForgottenPasswordPage;
-import com.platform.project.pageObjects.*;
+import com.platform.project.pageObjects.HomePage;
 import com.platform.project.pageObjects.LogInPage;
 import com.platform.project.pageObjects.WelcomePage;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.platform.project.commons.Commons.assertResult;
+import static com.platform.project.commons.Commons.check;
 
 public class ForgottenPasswordPageTest
 {
@@ -26,7 +27,8 @@ public class ForgottenPasswordPageTest
     public void setUp()
     {
         webDriverManager = new WebDriverManager();
-        driver = webDriverManager.getDriver("chrome");
+        driver = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
         welcomePage = new WelcomePage(driver);
@@ -40,9 +42,8 @@ public class ForgottenPasswordPageTest
         homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.passwordForgotten();
-        assertResult(driver, forgottenPasswordPage.getNoRecordsFound(),
-                " Error: The E-Mail Address was not " +
-                        "found in our records, please try again.");
+        Commons.check(driver, forgottenPasswordPage.getNoRecordsFound().equals(" Error: The E-Mail Address was not " +
+                        "found in our records, please try again."), "forgotPasswordFail");
     }
 
 

@@ -1,5 +1,6 @@
 package com.platform.project.pageObjects;
 
+import com.platform.project.commons.Commons;
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -56,9 +57,7 @@ public class CreateAccountSuccess
     public String getPageTitle()
     {
         log.info("Getting title");
-        String title = pageTitle.getText();
-        log.info("Login page title is: " + title);
-        return title;
+        return Commons.getElementText(driver, pageTitle, 3);
     }
 
     public void createAnAccount()

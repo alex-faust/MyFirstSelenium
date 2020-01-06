@@ -13,13 +13,13 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager
 {
     private WebDriver driver;
     private String osName = System.getProperty("os.name");
-    //private String browser = System.getProperty("browser");
-    private Logger logger = Logger.getLogger(WebDriverManager.class);
+    private Logger log = Logger.getLogger(WebDriverManager.class);
 
     private WebDriver createDriver(String browser)
     {
@@ -27,24 +27,24 @@ public class WebDriverManager
         {
             if (browser.equalsIgnoreCase("chrome"))
             {
-                logger.info("Chrome browser detected.");
+                log.info("Chrome browser detected.");
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
                 driver = new ChromeDriver();
 
             } else if (browser.equalsIgnoreCase("firefox"))
             {
-                logger.info("Firefox browser detected.");
+                log.info("Firefox browser detected.");
                 System.setProperty("webdriver.gecko.driver", "src//test//resources//drivers//geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (browser.equalsIgnoreCase("ie"))
             {
-                logger.info("Internet Explorer detected.");
+                log.info("Internet Explorer detected.");
                 System.setProperty("webdriver.ie.driver", "src//test//resources//drivers//IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
 
             } else
             {
-                logger.info("Default browser detected.");
+                log.info("Default browser detected.");
                 System.setProperty("webdriver.chrome.driver", "src//test//resources//drivers//chromedriver.exe");
                 driver = new ChromeDriver();
             }
@@ -52,28 +52,32 @@ public class WebDriverManager
         {
             if (browser.equalsIgnoreCase("chrome"))
             {
-                logger.info("Chrome browser detected.");
+                log.info("Chrome browser detected.");
                 System.setProperty("webdriver.chrome.driver", "src//test//resources//drivers//chromedriver.exe");
                 driver = new ChromeDriver();
 
             } else if (browser.equalsIgnoreCase("firefox"))
             {
-                logger.info("Firefox browser detected.");
+                log.info("Firefox browser detected.");
                 System.setProperty("webdriver.gecko.driver", "src//test//resources//drivers//geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (browser.equalsIgnoreCase("explorer"))
             {
-                logger.info("Safari detected.");
+                log.info("Safari detected.");
                 System.setProperty("webdriver.safari.driver", "src//test//resources//drivers//internetExplorer.msu");
                 driver = new SafariDriver();
             } else
             {
-                logger.info("Default browser detected.");
+                log.info("Default browser detected.");
                 System.setProperty("webdriver.chrome.driver", "src//test//resources//drivers//chromedriver.exe");
                 driver = new ChromeDriver();
             }
             //also for linux
         }
+        //Implicit wait
+        //how long it will take for all pages to open
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
         return driver;
     }
 
@@ -86,16 +90,23 @@ public class WebDriverManager
             try
             {
                 driver = createDriver(browser);
-                logger.info("Driver initialization successful.");
+                log.info("Driver initialization successful.");
             } catch (Exception e)
             {
-                logger.info("Driver initialization failed.");
+                log.info("Driver initialization failed.");
                 e.printStackTrace();
             }
         } else
         {
-            logger.info("Driver already exists.");
+            log.info("Driver already exists.");
         }
         return driver;
+    }
+
+    //will call from command line by default
+    public WebDriver getDriver()
+    {
+        return getDriver(Commons.createEnvVariable("browser",
+                ReadPropertyFile.getConfigPropertyVal("browser")));
     }
 }

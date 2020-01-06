@@ -1,17 +1,23 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 76.006 sec <<< FAILURE!
-createAnAccountTest(com.platform.project.test.CreateAccountSuccessTest)  Time elapsed: 3.189 sec  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[contains(text(),'Your Account Has Been Created!')]"}
-  (Session info: chrome=79.0.3945.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Tests run: 20, Failures: 4, Errors: 0, Skipped: 6, Time elapsed: 122.738 sec <<< FAILURE!
+buyProducts2(com.platform.project.test.CheckoutPageTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.platform.project.pageObjects.HomePage.openHomePage(HomePage.java:57)
+	at com.platform.project.test.CheckoutPageTest.buyProducts2(CheckoutPageTest.java:57)
+
+cleanUp(com.platform.project.test.CheckoutPageTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.platform.project.test.CheckoutPageTest.cleanUp(CheckoutPageTest.java:68)
+
+openAllLinks(com.platform.project.test.HomePageTest)  Time elapsed: 4.737 sec  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
 Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '192.168.86.118', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\abcle\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54350}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: dca8939e7e158fb9e03662bee0586785
-*** Element info: {Using=xpath, value=//h1[contains(text(),'Your Account Has Been Created!')]}
+System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 16564, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f6aba257-64a3-4009-b5b9-af2bc6a1a3ea
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -22,23 +28,29 @@ Session ID: dca8939e7e158fb9e03662bee0586785
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.getText(Unknown Source)
-	at com.platform.project.pageObjects.CreateAccountSuccess.getPageTitle(CreateAccountSuccess.java:27)
-	at com.platform.project.test.CreateAccountSuccessTest.createAnAccountTest(CreateAccountSuccessTest.java:39)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:128)
+	at com.platform.project.pageObjects.HomePage.checkAllLinks(HomePage.java:93)
+	at com.platform.project.test.HomePageTest.openAllLinks(HomePageTest.java:52)
 
-openHomePage2(com.platform.project.test.HomePageTest)  Time elapsed: 0.52 sec  <<< FAILURE!
-java.lang.AssertionError: expected [Welcome to IBusiness] but found [Welcome to iBusiness]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.platform.project.commons.Commons.assertResult(Commons.java:45)
-	at com.platform.project.test.HomePageTest.openHomePage2(HomePageTest.java:50)
+cleanUp(com.platform.project.test.HomePageTest)  Time elapsed: 5.672 sec  <<< FAILURE!
+org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
+System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 16564, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f6aba257-64a3-4009-b5b9-af2bc6a1a3ea
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:497)
+	at com.platform.project.test.HomePageTest.cleanUp(HomePageTest.java:70)
 

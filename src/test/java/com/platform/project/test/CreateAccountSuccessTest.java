@@ -1,16 +1,16 @@
 package com.platform.project.test;
 
 import com.platform.project.commons.Commons;
+import com.platform.project.commons.ReadPropertyFile;
 import com.platform.project.commons.WebDriverManager;
 import com.platform.project.pageObjects.CreateAccountSuccess;
-import com.platform.project.pageObjects.*;
-import com.platform.project.pageObjects.LogInPage;
+import com.platform.project.pageObjects.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.platform.project.commons.Commons.assertResult;
+import static com.platform.project.commons.Commons.check;
 
 public class CreateAccountSuccessTest
 {
@@ -23,7 +23,8 @@ public class CreateAccountSuccessTest
     public void setUp()
     {
         webDriverManager = new WebDriverManager();
-        driver = webDriverManager.getDriver("chrome");
+        driver = webDriverManager.getDriver
+                (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
         homePage = new HomePage(driver);
         cas = new CreateAccountSuccess(driver);
     }
@@ -34,7 +35,7 @@ public class CreateAccountSuccessTest
         homePage.openHomePage();
         homePage.clickCreateAccount();
         cas.createAnAccount();
-        assertResult(driver, cas.getPageTitle(), "Your Account Has Been Created!");
+        check(driver, cas.getPageTitle().equals("Your Account Has Been Created!"), "createAnAccountFail");
     }
 
     @AfterMethod
