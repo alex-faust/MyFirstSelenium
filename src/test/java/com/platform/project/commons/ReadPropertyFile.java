@@ -28,7 +28,7 @@ public class ReadPropertyFile
             prop.load(in);
 
             value = prop.getProperty(key);
-            logger.info("Value in property file for" + key + " is " + value);
+            logger.info("Value in property file for " + key + " is " + value);
         } catch (IOException ioe){
             ioe.printStackTrace();
             logger.info("Couldn't locate the property file");
@@ -36,36 +36,10 @@ public class ReadPropertyFile
         return value;
     }
 
-    /*private static String readXMLFile(String file, String key)
-    {
-        String value = null;
-        try
-        {
-            Workbook workbook = WorkbookFactory.create(new File(xmlFileLocaton));
-            Sheet sheet = workbook.getSheetAt(0);
-            DataFormatter df = new DataFormatter();
-            sheet.getRow(1);
-
-
-        } catch (IOException ioe) {
-            logger.info("Something wrong with the xml file");
-            ioe.printStackTrace();
-        } catch (InvalidFormatException e)
-        {
-            e.printStackTrace();
-        }
-    }*/
-
     public static String getConfigPropertyVal(final String key)
     {
         String configPropertyVal = readFile(configFileLocation, key);
         return configPropertyVal != null ? configPropertyVal.trim() : configPropertyVal;
         //if configpropertyVal is not equal to null, return configPropertyVal.trim, if not, return configPropertyVal if it is null
     }
-
-    /*public static String getXMLPropertyVal(final String key)
-    {
-
-    }*/
-
 }

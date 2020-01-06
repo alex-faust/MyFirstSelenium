@@ -15,7 +15,6 @@ public class LogInPageTest
 {
     WebDriver driver;
     LogInPage logInPage;
-    HomePage homePage;
     WebDriverManager webDriverManager;
 
     @BeforeMethod
@@ -24,15 +23,12 @@ public class LogInPageTest
         webDriverManager = new WebDriverManager();
         driver = webDriverManager.getDriver
                 (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
-        homePage = new HomePage(driver);
         logInPage = new LogInPage(driver);
     }
 
     @Test
     public void openLoginPage()
     {
-        homePage.openHomePage();
-        homePage.clickLogInText();
         Commons.check(driver, logInPage.getPageTitle().equals("Welcome, Please Sign In"), "openLoginPageFail");
     }
 

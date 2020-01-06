@@ -51,6 +51,7 @@ public class CreateAccountSuccess
     public CreateAccountSuccess(WebDriver driver)
     {
         this.driver = driver;
+        driver.get(ReadPropertyFile.getConfigPropertyVal("createAccountUrl"));
         PageFactory.initElements(driver, this);
     }
 

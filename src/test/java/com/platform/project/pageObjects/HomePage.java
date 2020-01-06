@@ -162,13 +162,13 @@ public class HomePage
 
         for (int i = 0; i < items.length; i++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFRow row = Commons.openExcel("Purchase Items",0).getRow(i);
             XSSFCell cellValue = row.getCell(0);
             items[i] = String.valueOf(cellValue);
         }
         for (int j = 0; j < theirPrices.length; j++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFRow row = Commons.openExcel("Purchase Items", 0).getRow(j);
             XSSFCell cellValue = row.getCell(1);
             theirPrices[j] = Double.parseDouble(String.valueOf(cellValue));
         }
@@ -210,13 +210,13 @@ public class HomePage
 
         for (int i = 0; i < items.length; i++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFRow row = Commons.openExcel("Purchase Items", 0).getRow(i);
             XSSFCell cellValue = row.getCell(0);
             items[i] = String.valueOf(cellValue);
         }
         for (int j = 0; j < theirPrices.length; j++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFRow row = Commons.openExcel("Purchase Items", 0).getRow(j);
             XSSFCell cellValue = row.getCell(1);
             theirPrices[j] = Double.parseDouble(String.valueOf(cellValue));
         }
@@ -235,7 +235,6 @@ public class HomePage
             //checking if item was added into cart
             if (cartContents.getText().equals("Cart Contents (" + count + ")"))
             {
-                //goToHomePage.click();
                 driver.navigate().back();
                 driver.navigate().back();
             }

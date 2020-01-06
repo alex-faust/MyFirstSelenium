@@ -1,255 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="14" passed="5" failed="4" skipped="5">
+<testng-results total="14" passed="13" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-04T22:20:16Z" name="Command line suite" finished-at="2020-01-04T22:21:30Z" duration-ms="74046">
+  <suite started-at="2020-01-06T03:30:57Z" name="Command line suite" finished-at="2020-01-06T03:33:44Z" duration-ms="166208">
     <groups>
     </groups>
-    <test started-at="2020-01-04T22:20:16Z" name="Command line test" finished-at="2020-01-04T22:21:30Z" duration-ms="74046">
+    <test started-at="2020-01-06T03:30:57Z" name="Command line test" finished-at="2020-01-06T03:33:44Z" duration-ms="166208">
       <class name="com.platform.project.test.LogOffPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:22Z" name="setUp" finished-at="2020-01-04T14:21:24Z" duration-ms="2722" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:32:49Z" name="setUp" finished-at="2020-01-05T19:32:58Z" duration-ms="8393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="LogOffPageTest()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:24Z" name="LogOffPageTest" finished-at="2020-01-04T14:21:26Z" duration-ms="1609" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4260, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 48dec343-c010-4819-b462-f72a4b03d1c1
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[1]/u[1]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4260, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 48dec343-c010-4819-b462-f72a4b03d1c1
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[1]/u[1]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy10.click(Unknown Source)
-	at com.platform.project.pageObjects.HomePage.clickLogInText(HomePage.java:72)
-	at com.platform.project.test.LogOffPageTest.LogOffPageTest(LogOffPageTest.java:50)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method signature="LogOffPageTest()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:32:58Z" name="LogOffPageTest" finished-at="2020-01-05T19:32:59Z" duration-ms="1125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogOffPageTest -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="cleanUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4260, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 48dec343-c010-4819-b462-f72a4b03d1c1]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 4260, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 48dec343-c010-4819-b462-f72a4b03d1c1
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:497)
-	at com.platform.project.test.LogOffPageTest.cleanUp(LogOffPageTest.java:99)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:32:59Z" name="cleanUp" finished-at="2020-01-05T19:33:01Z" duration-ms="2413" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="setUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:01Z" name="setUp" finished-at="2020-01-05T19:33:09Z" duration-ms="8455" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="twoUsersLogOnAtSameTime()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="twoUsersLogOnAtSameTime" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- twoUsersLogOnAtSameTime -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="setUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="setUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="enterCredFromConfigTest()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="enterCredFromConfigTest" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        <test-method signature="enterCredFromConfigTest()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:09Z" name="enterCredFromConfigTest" finished-at="2020-01-05T19:33:10Z" duration-ms="970" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterCredFromConfigTest -->
-        <test-method signature="enterCredFromExcel()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="enterCredFromExcel" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:10Z" name="cleanUp" finished-at="2020-01-05T19:33:13Z" duration-ms="2437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:13Z" name="setUp" finished-at="2020-01-05T19:33:21Z" duration-ms="7698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="enterCredFromExcel()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:21Z" name="enterCredFromExcel" finished-at="2020-01-05T19:33:22Z" duration-ms="1797" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterCredFromExcel -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="cleanUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:22Z" name="cleanUp" finished-at="2020-01-05T19:33:25Z" duration-ms="2313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="cleanUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:25Z" name="setUp" finished-at="2020-01-05T19:33:32Z" duration-ms="7359" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-04T14:21:26Z" name="cleanUp" finished-at="2020-01-04T14:21:26Z" duration-ms="0" status="SKIP">
+        </test-method> <!-- setUp -->
+        <test-method signature="twoUsersLogOnAtSameTime()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:32Z" name="twoUsersLogOnAtSameTime" finished-at="2020-01-05T19:33:34Z" duration-ms="2315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- twoUsersLogOnAtSameTime -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogOffPageTest@a9cd3b1]" started-at="2020-01-05T19:33:34Z" name="cleanUp" finished-at="2020-01-05T19:33:37Z" duration-ms="2422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.platform.project.test.LogOffPageTest -->
       <class name="com.platform.project.test.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:07Z" name="setUp" finished-at="2020-01-04T14:21:10Z" duration-ms="2620" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:12Z" name="setUp" finished-at="2020-01-05T19:32:16Z" duration-ms="3736" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="dropDownMenu()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:10Z" name="dropDownMenu" finished-at="2020-01-04T14:21:11Z" duration-ms="1782" status="PASS">
+        <test-method signature="dropDownMenu()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:16Z" name="dropDownMenu" finished-at="2020-01-05T19:32:16Z" duration-ms="609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dropDownMenu -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:11Z" name="cleanUp" finished-at="2020-01-04T14:21:12Z" duration-ms="1047" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:16Z" name="cleanUp" finished-at="2020-01-05T19:32:18Z" duration-ms="1204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:12Z" name="setUp" finished-at="2020-01-04T14:21:15Z" duration-ms="2609" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:18Z" name="setUp" finished-at="2020-01-05T19:32:21Z" duration-ms="3672" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="openAllLinks()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:15Z" name="openAllLinks" finished-at="2020-01-04T14:21:16Z" duration-ms="860" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method signature="openAllLinks()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:21Z" name="openAllLinks" finished-at="2020-01-05T19:32:30Z" duration-ms="8582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAllLinks -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:30Z" name="cleanUp" finished-at="2020-01-05T19:32:31Z" duration-ms="1141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:31Z" name="setUp" finished-at="2020-01-05T19:32:35Z" duration-ms="3985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openHomePage()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:35Z" name="openHomePage" finished-at="2020-01-05T19:32:36Z" duration-ms="437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHomePage -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:36Z" name="cleanUp" finished-at="2020-01-05T19:32:37Z" duration-ms="1328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:37Z" name="setUp" finished-at="2020-01-05T19:32:40Z" duration-ms="3579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openHomePage2()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:40Z" name="openHomePage2" finished-at="2020-01-05T19:32:41Z" duration-ms="953" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Browsing context has been discarded
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 15124, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: dcb4b781-69d8-4216-a830-cdc76fdd9605
-*** Element info: {Using=tag name, value=a}]]>
+              <![CDATA[null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 15124, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: dcb4b781-69d8-4216-a830-cdc76fdd9605
-*** Element info: {Using=tag name, value=a}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:398)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByTagName(RemoteWebDriver.java:445)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:327)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:359)
-	at com.platform.project.pageObjects.HomePage.checkAllLinks(HomePage.java:86)
-	at com.platform.project.test.HomePageTest.openAllLinks(HomePageTest.java:52)
+              <![CDATA[java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.fail(Assert.java:101)
+	at com.platform.project.commons.Commons.check(Commons.java:58)
+	at com.platform.project.test.HomePageTest.openHomePage2(HomePageTest.java:43)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -286,469 +144,93 @@ Session ID: dcb4b781-69d8-4216-a830-cdc76fdd9605
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openAllLinks -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:16Z" name="cleanUp" finished-at="2020-01-04T14:21:16Z" duration-ms="0" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 15124, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: dcb4b781-69d8-4216-a830-cdc76fdd9605]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 15124, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: dcb4b781-69d8-4216-a830-cdc76fdd9605
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:497)
-	at com.platform.project.test.HomePageTest.cleanUp(HomePageTest.java:70)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="setUp" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="cleanUp" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="cleanUp" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="setUp" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openHomePage2()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="openHomePage2" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage2 -->
-        <test-method signature="openHomePage()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-04T14:21:17Z" name="openHomePage" finished-at="2020-01-04T14:21:17Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openHomePage -->
-      </class> <!-- com.platform.project.test.HomePageTest -->
-      <class name="com.platform.project.test.CheckoutPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:16Z" name="setUp" finished-at="2020-01-04T14:20:20Z" duration-ms="3328" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="buyProducts1()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:20Z" name="buyProducts1" finished-at="2020-01-04T14:20:32Z" duration-ms="12828" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- buyProducts1 -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:32Z" name="cleanUp" finished-at="2020-01-04T14:20:34Z" duration-ms="1167" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.HomePageTest@57c758ac]" started-at="2020-01-05T19:32:41Z" name="cleanUp" finished-at="2020-01-05T19:32:43Z" duration-ms="1422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:34Z" name="setUp" finished-at="2020-01-04T14:20:36Z" duration-ms="2645" status="PASS">
+      </class> <!-- com.platform.project.test.HomePageTest -->
+      <class name="com.platform.project.test.CheckoutPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:30:57Z" name="setUp" finished-at="2020-01-05T19:31:03Z" duration-ms="5437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="buyProducts2()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:36Z" name="buyProducts2" finished-at="2020-01-04T14:20:52Z" duration-ms="16236" status="PASS">
+        <test-method signature="buyProducts1()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:31:03Z" name="buyProducts1" finished-at="2020-01-05T19:31:27Z" duration-ms="24620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buyProducts1 -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:31:27Z" name="cleanUp" finished-at="2020-01-05T19:31:29Z" duration-ms="1375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:31:29Z" name="setUp" finished-at="2020-01-05T19:31:33Z" duration-ms="4204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="buyProducts2()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:31:33Z" name="buyProducts2" finished-at="2020-01-05T19:31:58Z" duration-ms="24625" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyProducts2 -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-04T14:20:52Z" name="cleanUp" finished-at="2020-01-04T14:20:54Z" duration-ms="1172" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CheckoutPageTest@61230f6a]" started-at="2020-01-05T19:31:58Z" name="cleanUp" finished-at="2020-01-05T19:31:59Z" duration-ms="1469" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.platform.project.test.CheckoutPageTest -->
       <class name="com.platform.project.test.CreateAccountSuccessTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-04T14:20:54Z" name="setUp" finished-at="2020-01-04T14:20:56Z" duration-ms="2633" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-05T19:31:59Z" name="setUp" finished-at="2020-01-05T19:32:03Z" duration-ms="3860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createAnAccountTest()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-04T14:20:56Z" name="createAnAccountTest" finished-at="2020-01-04T14:20:59Z" duration-ms="3179" status="PASS">
+        <test-method signature="createAnAccountTest()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-05T19:32:03Z" name="createAnAccountTest" finished-at="2020-01-05T19:32:04Z" duration-ms="1562" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAnAccountTest -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-04T14:20:59Z" name="cleanUp" finished-at="2020-01-04T14:21:00Z" duration-ms="1001" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.CreateAccountSuccessTest@67a20f67]" started-at="2020-01-05T19:32:04Z" name="cleanUp" finished-at="2020-01-05T19:32:06Z" duration-ms="1204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.platform.project.test.CreateAccountSuccessTest -->
       <class name="com.platform.project.test.WelcomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-04T14:21:26Z" name="setUp" finished-at="2020-01-04T14:21:29Z" duration-ms="2624" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-05T19:33:37Z" name="setUp" finished-at="2020-01-05T19:33:41Z" duration-ms="4291" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="noEmailPasswordMatch()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-04T14:21:29Z" name="noEmailPasswordMatch" finished-at="2020-01-04T14:21:30Z" duration-ms="1626" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 18512, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c757112-0249-4943-be5a-c733fc651416
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[1]/u[1]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 18512, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c757112-0249-4943-be5a-c733fc651416
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[1]/u[1]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy10.click(Unknown Source)
-	at com.platform.project.pageObjects.HomePage.clickLogInText(HomePage.java:72)
-	at com.platform.project.test.WelcomePageTest.noEmailPasswordMatch(WelcomePageTest.java:39)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method signature="noEmailPasswordMatch()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-05T19:33:41Z" name="noEmailPasswordMatch" finished-at="2020-01-05T19:33:42Z" duration-ms="1124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- noEmailPasswordMatch -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-04T14:21:30Z" name="cleanUp" finished-at="2020-01-04T14:21:30Z" duration-ms="0" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 18512, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c757112-0249-4943-be5a-c733fc651416]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 18512, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4c757112-0249-4943-be5a-c733fc651416
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:497)
-	at com.platform.project.test.WelcomePageTest.cleanUp(WelcomePageTest.java:47)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.WelcomePageTest@9225652]" started-at="2020-01-05T19:33:42Z" name="cleanUp" finished-at="2020-01-05T19:33:44Z" duration-ms="1333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.platform.project.test.WelcomePageTest -->
       <class name="com.platform.project.test.ForgottenPasswordPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-04T14:21:00Z" name="setUp" finished-at="2020-01-04T14:21:03Z" duration-ms="2719" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-05T19:32:06Z" name="setUp" finished-at="2020-01-05T19:32:10Z" duration-ms="4501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="forgotPasswordTest()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-04T14:21:03Z" name="forgotPasswordTest" finished-at="2020-01-04T14:21:06Z" duration-ms="2613" status="PASS">
+        <test-method signature="forgotPasswordTest()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-05T19:32:10Z" name="forgotPasswordTest" finished-at="2020-01-05T19:32:11Z" duration-ms="734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forgotPasswordTest -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-04T14:21:06Z" name="cleanUp" finished-at="2020-01-04T14:21:07Z" duration-ms="1125" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.ForgottenPasswordPageTest@64cd705f]" started-at="2020-01-05T19:32:11Z" name="cleanUp" finished-at="2020-01-05T19:32:12Z" duration-ms="1203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.platform.project.test.ForgottenPasswordPageTest -->
       <class name="com.platform.project.test.LogInPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-04T14:21:17Z" name="setUp" finished-at="2020-01-04T14:21:19Z" duration-ms="2656" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-05T19:32:43Z" name="setUp" finished-at="2020-01-05T19:32:48Z" duration-ms="4852" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="openLoginPage()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-04T14:21:19Z" name="openLoginPage" finished-at="2020-01-04T14:21:21Z" duration-ms="2112" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 6596, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5bcb6ec5-3b82-4238-a1a9-ec49f337ef46
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/h1[1]}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 6596, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5bcb6ec5-3b82-4238-a1a9-ec49f337ef46
-*** Element info: {Using=xpath, value=/html[1]/body[1]/div[1]/div[3]/h1[1]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy10.getText(Unknown Source)
-	at com.platform.project.pageObjects.LogInPage.getPageTitle(LogInPage.java:46)
-	at com.platform.project.test.LogInPageTest.openLoginPage(LogInPageTest.java:38)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method signature="openLoginPage()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-05T19:32:48Z" name="openLoginPage" finished-at="2020-01-05T19:32:48Z" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openLoginPage -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-04T14:21:21Z" name="cleanUp" finished-at="2020-01-04T14:21:21Z" duration-ms="0" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 6596, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5bcb6ec5-3b82-4238-a1a9-ec49f337ef46]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ALEXCOMPUTER', ip: '10.1.10.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 71.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191202093317, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 6596, moz:profile: C:\Users\abcle\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5bcb6ec5-3b82-4238-a1a9-ec49f337ef46
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:497)
-	at com.platform.project.test.LogInPageTest.cleanUp(LogInPageTest.java:44)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:com.platform.project.test.LogInPageTest@13e39c73]" started-at="2020-01-05T19:32:48Z" name="cleanUp" finished-at="2020-01-05T19:32:49Z" duration-ms="1344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->

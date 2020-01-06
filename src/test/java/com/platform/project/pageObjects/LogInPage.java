@@ -38,6 +38,7 @@ public class LogInPage
     public LogInPage(WebDriver driver)
     {
         this.driver = driver;
+        driver.get(ReadPropertyFile.getConfigPropertyVal("loginPageUrl"));
         PageFactory.initElements(driver, this);
     }
 
@@ -75,7 +76,7 @@ public class LogInPage
         log.info("Entering details from excel.");
         String usernameExcel = "", passwordExcel = "";
 
-        for (Row row : Commons.openExcel(0))
+        for (Row row : Commons.openExcel("credentials", 0))
         {
             Iterator cellIterator = row.cellIterator();
             usernameExcel = String.valueOf(cellIterator.next());

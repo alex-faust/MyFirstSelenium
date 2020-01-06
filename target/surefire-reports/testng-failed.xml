@@ -19,41 +19,33 @@
         <methods>
           <include name="cleanUp"/>
           <include name="openHomePage2"/>
-          <include name="openAllLinks"/>
-          <include name="openHomePage"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.platform.project.test.HomePageTest -->
       <class name="com.platform.project.test.LogOffPageTest">
         <methods>
           <include name="cleanUp"/>
-          <include name="twoUsersLogOnAtSameTime"/>
-          <include name="enterCredFromConfigTest"/>
-          <include name="LogOffPageTest"/>
-          <include name="enterCredFromExcel"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.platform.project.test.LogOffPageTest -->
       <class name="com.platform.project.test.LogInPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="openLoginPage"/>
           <include name="cleanUp"/>
         </methods>
       </class> <!-- com.platform.project.test.LogInPageTest -->
-      <class name="com.platform.project.test.WelcomePageTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="noEmailPasswordMatch"/>
-          <include name="cleanUp"/>
-        </methods>
-      </class> <!-- com.platform.project.test.WelcomePageTest -->
       <class name="com.platform.project.test.ForgottenPasswordPageTest">
         <methods>
           <include name="setUp"/>
           <include name="cleanUp"/>
         </methods>
       </class> <!-- com.platform.project.test.ForgottenPasswordPageTest -->
+      <class name="com.platform.project.test.WelcomePageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- com.platform.project.test.WelcomePageTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

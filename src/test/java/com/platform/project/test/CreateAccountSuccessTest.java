@@ -15,7 +15,6 @@ import static com.platform.project.commons.Commons.check;
 public class CreateAccountSuccessTest
 {
     WebDriver driver;
-    HomePage homePage;
     WebDriverManager webDriverManager;
     CreateAccountSuccess cas;
 
@@ -25,15 +24,12 @@ public class CreateAccountSuccessTest
         webDriverManager = new WebDriverManager();
         driver = webDriverManager.getDriver
                 (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
-        homePage = new HomePage(driver);
         cas = new CreateAccountSuccess(driver);
     }
 
     @Test
     public void createAnAccountTest()
     {
-        homePage.openHomePage();
-        homePage.clickCreateAccount();
         cas.createAnAccount();
         check(driver, cas.getPageTitle().equals("Your Account Has Been Created!"), "createAnAccountFail");
     }

@@ -17,9 +17,6 @@ import static com.platform.project.commons.Commons.check;
 public class ForgottenPasswordPageTest
 {
     WebDriver driver;
-    LogInPage logInPage;
-    HomePage homePage;
-    WelcomePage welcomePage;
     WebDriverManager webDriverManager;
     ForgottenPasswordPage forgottenPasswordPage;
 
@@ -29,9 +26,6 @@ public class ForgottenPasswordPageTest
         webDriverManager = new WebDriverManager();
         driver = webDriverManager.getDriver
                 (Commons.createEnvVariable("browser", ReadPropertyFile.getConfigPropertyVal("browser")));
-        homePage = new HomePage(driver);
-        logInPage = new LogInPage(driver);
-        welcomePage = new WelcomePage(driver);
         forgottenPasswordPage = new ForgottenPasswordPage(driver);
 
     }
@@ -39,9 +33,6 @@ public class ForgottenPasswordPageTest
     @Test
     public void forgotPasswordTest()
     {
-        homePage.openHomePage();
-        homePage.clickLogInText();
-        logInPage.passwordForgotten();
         Commons.check(driver, forgottenPasswordPage.getNoRecordsFound().equals(" Error: The E-Mail Address was not " +
                         "found in our records, please try again."), "forgotPasswordFail");
     }

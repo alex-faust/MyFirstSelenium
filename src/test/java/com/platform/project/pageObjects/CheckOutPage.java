@@ -48,14 +48,14 @@ public class CheckOutPage
         //retrieve items
         for (int i = 0; i < items.length; i++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(i);
+            XSSFRow row = Commons.openExcel("Purchase Items", 0).getRow(i);
             XSSFCell cellValue = row.getCell(0);
             items[i] = String.valueOf(cellValue);
         }
         //retrieve price totals
         for (int j = 0; j < priceTotals.length; j++)
         {
-            XSSFRow row = Commons.openExcel(0).getRow(j);
+            XSSFRow row = Commons.openExcel("Purchase Items", 0).getRow(j);
             XSSFCell cellValue = row.getCell(1);
             priceTotals[j] = Double.parseDouble(String.valueOf(cellValue));
         }
