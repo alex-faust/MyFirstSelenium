@@ -35,20 +35,12 @@ public class HomePageTest
         homePage.openHomePage();
         Commons.check(driver, homePage.getPageTitle().equals("Welcome to iBusiness"), "Home Page Title didn't match.");
     }
-
-    @Test
-    public void openHomePage2()
-    {
-        homePage.openHomePage();
-        Commons.check(driver, homePage.getPageTitle().equals("Welcome to IBusiness"), "Home Page Title didn't match.");
-    }
-
+    
     @Test
     public void openAllLinks()
     {
-        //need to get an assert for this test.
         homePage.openHomePage();
-        homePage.checkAllLinks();
+        Commons.check(driver, homePage.checkAllLinks() == 0, "There is a bad link somewhere." );
     }
 
     @Test
@@ -68,5 +60,4 @@ public class HomePageTest
     {
         driver.quit();
     }
-
 }

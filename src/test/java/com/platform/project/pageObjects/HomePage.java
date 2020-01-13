@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -32,16 +33,12 @@ public class HomePage
     WebElement pageTitle;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[1]/u[1]")
     WebElement logYourselfIn;
-    @FindBy(xpath = "//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/a[2]/u[1]")
-    WebElement createAccount;
     @FindBy(xpath = "//div[@id='storeLogo']//a//img")
     WebElement goToHomePage;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[2]/div[2]/span[1]/span[1]/button[1]/span[2]")
     WebElement addToCartButton;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/span[1]/a[1]/span[2]")
     WebElement cartContents;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/span[2]/a[1]/span[2]")
-    WebElement checkOutBtn;
 
     private WebDriver driver;
     private Logger log = Logger.getLogger(HomePage.class);
@@ -70,18 +67,12 @@ public class HomePage
         logYourselfIn.click();
     }
 
-    public void clickCreateAccount()
-    {
-        createAccount.click();
-    }
-
-    public void checkAllLinks()
+    public int checkAllLinks()
     {
         HttpURLConnection huc;
-        String homePage = ReadPropertyFile.getConfigPropertyVal("homePageUrl");
-        int respCode;
         String url;
         List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+        ArrayList<String> failedLinks = new ArrayList<>();
         Iterator<WebElement> it = allLinks.iterator();
 
         log.info("All the web links are: ");
@@ -96,7 +87,7 @@ public class HomePage
                 continue;
             }
 
-            if (!url.startsWith(homePage))
+            if (!url.startsWith(ReadPropertyFile.getConfigPropertyVal("homePageUrl")))
             {
                 System.out.println("URL belongs to another domain, skipping it.");
                 continue;
@@ -107,11 +98,12 @@ public class HomePage
                 huc = (HttpURLConnection) (new URL(url).openConnection());
                 huc.setRequestMethod("HEAD");
                 huc.connect();
-                respCode = huc.getResponseCode();
+                //respCode = huc.getResponseCode();
 
-                if (respCode >= 400)
+                if (huc.getResponseCode() >= 400)
                 {
                     System.out.println(url + " is a broken link.");
+                    failedLinks.add(url);
                 } else
                 {
                     System.out.println(url + " is a valid link.");
@@ -119,11 +111,17 @@ public class HomePage
             } catch (MalformedURLException mue)
             {
                 mue.printStackTrace();
-            } catch (IOException ioe)
-            {
+            } catch (IOException ioe){
                 ioe.printStackTrace();
             }
         }
+
+        //logging all failed links
+        for(String s: failedLinks)
+        {
+            log.info(s);
+        }
+        return failedLinks.size();
     }
 
     public String[] dropDownMenu()
@@ -131,6 +129,7 @@ public class HomePage
         WebElement element = driver.findElement(By.name("manufacturers_id"));
         Select selectElement = new Select(element);
         List<WebElement> elements = selectElement.getOptions();
+        //List<String> elements2 = ReadPropertyFile.getConfigPropertyVal("dropDownMenu");
         log.info("There are " + (elements.size() - 1) + " items in the drop down.");
         String[] values = new String[elements.size() - 1];
         for (int i = 1; i < elements.size(); i++)
