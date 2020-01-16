@@ -13,7 +13,7 @@ public class LogOffPage
     WebElement pageTitle;
 
     private WebDriver driver;
-    private Logger log = Logger.getLogger(WelcomePage.class);
+    private Logger log = Logger.getLogger(LogOffPage.class);
 
     public LogOffPage(WebDriver driver)
     {

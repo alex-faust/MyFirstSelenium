@@ -35,7 +35,7 @@ public class HomePageTest
         homePage.openHomePage();
         Commons.check(driver, homePage.getPageTitle().equals("Welcome to iBusiness"), "Home Page Title didn't match.");
     }
-    
+
     @Test
     public void openAllLinks()
     {

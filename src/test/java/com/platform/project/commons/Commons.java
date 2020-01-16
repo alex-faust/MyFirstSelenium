@@ -41,7 +41,7 @@ public class Commons
         } catch (IOException e)
         {
             e.printStackTrace();
-            log.info("Unable to take screenshot" + fileName);
+            log.info("Unable to take screenshot " + fileName);
         }
     }
 
@@ -54,7 +54,8 @@ public class Commons
         } else
         {
             log.info(failMessage);
-            takeSnapShot(driver, currentThread().getStackTrace()[2].getClassName(), currentThread().getStackTrace()[2].getMethodName());
+            takeSnapShot(driver, currentThread().getStackTrace()[2].getClassName(),
+                    currentThread().getStackTrace()[2].getMethodName());
             Assert.fail();
             //Assert.assertTrue(false);
         }
@@ -138,7 +139,6 @@ public class Commons
             return "";
         }
     }
-
 
     public static XSSFSheet openExcel(String fileName, int sheetNum)
     {
