@@ -40,9 +40,11 @@ public class CheckoutPageTest
         homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromConfig();
-        homePage.selectItems1();
+        Commons.check(driver, homePage.selectItems1().equals("Cart Contents (5)"),
+                "failed to select items");
         homePage.goToCartContents();
-        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"), "buyProducts1Fail");
+        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"),
+                "failed to buy products #1");
     }
 
 
@@ -55,9 +57,11 @@ public class CheckoutPageTest
         homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsFromConfig();
-        homePage.selectItems2();
+        Commons.check(driver, homePage.selectItems2().equals("Cart Contents (5)"),
+                "failed to select items");
         homePage.goToCartContents();
-        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"), "buyProducts2Fail");
+        Commons.check(driver, checkOutPage.verifyCart().equals("Your Order Has Been Processed!"),
+                "failed to buy products #2");
     }
 
     @AfterMethod

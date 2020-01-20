@@ -36,7 +36,8 @@ public class WelcomePageTest
         homePage.openHomePage();
         homePage.clickLogInText();
         logInPage.enterUserDetailsError();
-        Commons.check(driver, logInPage.getErrorMsg().equals(" Error: No match for E-Mail Address and/or Password."), "noEmailPasswordMatchFail");
+        Commons.check(driver, logInPage.getErrorMsg().equals(" Error: No match for E-Mail Address and/or Password."),
+                "noEmailPasswordMatchFail");
     }
 
     @AfterMethod

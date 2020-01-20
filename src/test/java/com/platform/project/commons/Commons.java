@@ -87,6 +87,29 @@ public class Commons
         }
     }
 
+    public static boolean waitForElement(WebDriver driver, WebElement element)
+    {
+        return waitForElement(driver, element, 3);
+    }
+
+    public static boolean clickOnElement(WebDriver driver, WebElement el, int seconds)
+    {
+        if (isElementVisible(driver, el, seconds))
+        {
+            log.info("Clicking on element.");
+            el.click();
+            return true;
+        } else {
+            log.info("Element could not be found.");
+            return false;
+        }
+    }
+
+    public static boolean clickOnElement(WebDriver driver, WebElement el)
+    {
+        return clickOnElement(driver, el, 3);
+    }
+
     //Explicit Wait = Fluent wait
     public static boolean isElementVisible(WebDriver driver, WebElement el, int seconds)
     {
@@ -160,14 +183,5 @@ public class Commons
         return sheet;
     }
 
-    public static void clickOnElement(WebDriver driver, WebElement el, int seconds)
-    {
-        if (isElementVisible(driver, el, seconds))
-        {
-            log.info("Clicking on element.");
-            el.click();
-        } else {
-            log.info("Element could not be found.");
-        }
-    }
+
 }

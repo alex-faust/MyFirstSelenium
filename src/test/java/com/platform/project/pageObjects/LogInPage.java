@@ -58,7 +58,7 @@ public class LogInPage
         log.info("Password is: " + password);
         usernameBox.sendKeys(username);
         passwordBox.sendKeys(password);
-        signInButton.click();
+        Commons.clickOnElement(driver, signInButton, 3);
     }
 
     public void enterUserDetailsFromConfig()
@@ -68,7 +68,7 @@ public class LogInPage
         String password = ReadPropertyFile.getConfigPropertyVal("password");
         usernameBox.sendKeys(username);
         passwordBox.sendKeys(password);
-        signInButton.click();
+        Commons.clickOnElement(driver, signInButton);
     }
 
     public void enterUserDetailsFromExcel()
@@ -87,7 +87,7 @@ public class LogInPage
         log.info("password is: " + passwordExcel);
         usernameBox.sendKeys(usernameExcel);
         passwordBox.sendKeys(passwordExcel);
-        signInButton.click();
+        Commons.clickOnElement(driver, signInButton);
     }
 
     public void enterUserDetailsError()
@@ -99,7 +99,7 @@ public class LogInPage
         log.info("Password is: " + password);
         usernameBox.sendKeys(username);
         passwordBox.sendKeys(password);
-        signInButton.click();
+        Commons.clickOnElement(driver, signInButton);
     }
 
     public String getErrorMsg()
@@ -107,10 +107,4 @@ public class LogInPage
         log.info("Getting log in error.");
         return Commons.getElementText(driver, loginError, 3);
     }
-
-    public void passwordForgotten()
-    {
-        passwordForgottenLink.click();
-    }
-
 }
