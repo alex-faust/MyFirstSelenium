@@ -1,23 +1,22 @@
 package com.platform.project.pageObjects;
 
 import com.platform.project.commons.Commons;
+import com.platform.project.commons.JSUtil;
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -39,6 +38,12 @@ public class HomePage
     WebElement addToCartButton;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/span[1]/a[1]/span[2]")
     WebElement cartContents;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/a[1]")
+    WebElement bugsLife;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[4]/div[3]/div[2]/form[1]/input[1]")
+    WebElement searchBar;
+    @FindBy(xpath = "//body/div[@id='bodyWrapper']/div[@class='grid_24']/a/img[1]")
+    WebElement osCommerce;
 
     private WebDriver driver;
     private Logger log = Logger.getLogger(HomePage.class);
@@ -53,11 +58,16 @@ public class HomePage
     {
         log.info("Opening Homepage");
         driver.get(ReadPropertyFile.getConfigPropertyVal("homePageUrl"));
+
     }
 
     public String getPageTitle()
     {
         log.info("Getting title");
+        //JSUtil.flash(pageTitle, driver);
+        //JSUtil.drawBorder(pageTitle, driver);
+        //JSUtil.generateAlert(driver, "Hello");
+        //JSUtil.refreshBrowserByJS(driver);
         return Commons.getElementText(driver, pageTitle, 3);
     }
 
@@ -243,5 +253,66 @@ public class HomePage
     public void goToCartContents()
     {
         Commons.clickOnElement(driver, cartContents, 3);
+    }
+
+    public String usingRobotClass()
+    {
+        try
+        {
+            searchBar.click();
+
+            Robot robot = new Robot();
+            Thread.sleep(2000);
+
+            robot.keyPress(KeyEvent.VK_CAPS_LOCK);
+            robot.keyPress(KeyEvent.VK_B);
+            robot.keyPress(KeyEvent.VK_U);
+            robot.keyPress(KeyEvent.VK_G);
+            robot.keyPress(KeyEvent.VK_QUOTE);
+            robot.keyPress(KeyEvent.VK_S);
+            robot.keyPress(KeyEvent.VK_ENTER);
+
+            robot.mouseMove(100, 100);
+            Thread.sleep(2000);
+            robot.mouseMove(500, 500);
+            Thread.sleep(2000);
+            robot.mouseMove(1000,1000);
+
+
+        } catch (AWTException e)
+        {
+            e.printStackTrace();
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
+        return Commons.getElementText(driver, bugsLife);
+    }
+
+    public String usingActionsTest()
+    {
+        try
+        {
+            searchBar.click();
+            Thread.sleep(2000);
+
+            Actions action = new Actions(driver);
+            action.sendKeys("BUG'S");
+            action.sendKeys(Keys.ENTER);
+            action.build().perform();
+
+
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
+        return Commons.getElementText(driver, bugsLife);
+    }
+
+    public void scrollElement()
+    {
+        JSUtil.scrollIntoView(osCommerce, driver);
     }
 }

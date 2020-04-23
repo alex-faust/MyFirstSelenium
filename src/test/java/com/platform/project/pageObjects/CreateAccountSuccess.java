@@ -3,6 +3,7 @@ package com.platform.project.pageObjects;
 import com.platform.project.commons.Commons;
 import com.platform.project.commons.ReadPropertyFile;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,5 +84,19 @@ public class CreateAccountSuccess
         country.click();
         genderMale.click();
         continueButton.click();
+    }
+    public void handleAlerts()
+    {
+        continueButton.click();
+
+        try
+        {
+            Alert alert = driver.switchTo().alert();
+            Thread.sleep(5000);
+            alert.accept();
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

@@ -25,8 +25,6 @@ public class CheckOutPage
     WebElement confirmOrder;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[2]/span[1]/span[1]/a[1]/span[2]")
     WebElement checkOutBtn;
-    //@FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/p[1]/strong[1]")
-    //WebElement subTotal;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[3]/td[2]/strong[1]")
     WebElement priceTotal;
 

@@ -54,10 +54,27 @@ public class Commons
         } else
         {
             log.info(failMessage);
+            //as jsutil drawborder here
             takeSnapShot(driver, currentThread().getStackTrace()[2].getClassName(),
                     currentThread().getStackTrace()[2].getMethodName());
             Assert.fail();
             //Assert.assertTrue(false);
+        }
+    }
+
+    public static void check(WebDriver driver, WebElement element, boolean condition, String failMessage)
+    {
+        if (condition)
+        {
+            log.info("Check condition is true.");
+            Assert.assertTrue(true);
+        } else
+        {
+            log.info(failMessage);
+            JSUtil.drawBorder(element, driver);
+            takeSnapShot(driver, currentThread().getStackTrace()[2].getClassName(),
+                    currentThread().getStackTrace()[2].getMethodName());
+            Assert.fail();
         }
     }
 
@@ -182,6 +199,5 @@ public class Commons
         }
         return sheet;
     }
-
 
 }

@@ -34,6 +34,14 @@ public class CreateAccountSuccessTest
         check(driver, cas.getPageTitle().equals("Your Account Has Been Created!"), "createAnAccountFail");
     }
 
+    @Test
+    public void alertTests()
+    {
+        cas.handleAlerts();
+        cas.createAnAccount();
+        check(driver, cas.getPageTitle().equals("Your Account Has Been Created!"), "createAnAccountFail");
+    }
+
     @AfterMethod
     public void cleanUp()
     {

@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeTest" verbose="1">
+    <test name="SmokeTest 1">
+        <classes>
+            <class name="com.platform.project.test.HomePageTest" >
+                <methods>
+                    <include name="robotTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SmokeTest 2">
+        <classes>
+            <class name="com.platform.project.test.HomePageTest" >
+            <methods>
+                <include name="actionsTest"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
